@@ -1,1 +1,2 @@
 # portfolio
+Personal repository project.
