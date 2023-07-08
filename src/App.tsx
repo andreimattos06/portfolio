@@ -1,9 +1,10 @@
-import { ReactElement, ReactEventHandler, useState } from 'react'
+import { ReactElement, ReactEventHandler} from 'react'
 import { useEffect } from 'react'
 import './App.css'
 import './components/Header'
 import { Header } from './components/Header'
-import { Atom, DotOutline, EnvelopeSimple, Fire, GithubLogo, InstagramLogo, LinkedinLogo, FileTs, Triangle, Hexagon, Equals, Seal, FileJs, Target, MagnifyingGlassPlus, TagSimple, GraduationCap } from '@phosphor-icons/react'
+import { Atom, DotOutline, EnvelopeSimple, Fire, GithubLogo, InstagramLogo, LinkedinLogo, FileTs, Triangle, Hexagon, Equals, Seal, FileJs, MagnifyingGlassPlus, TagSimple, GraduationCap, Rocket, RocketLaunch, Wrench, Certificate } from '@phosphor-icons/react'
+
 
 interface ferramentasETecnologias{
   nome: string,
@@ -211,8 +212,9 @@ useEffect(() => { //useEffect para carregar as animações e transições de div
 
 
   return (
+    
     <>
-
+    
         <div className="z-10 w-full h-screen opacity-70 bg-neutral-900 absolute grid grid-cols-2 transform-gpu will-change-transform" id="blur_bg">             
         </div>
 
@@ -266,7 +268,8 @@ useEffect(() => { //useEffect para carregar as animações e transições de div
             {tecnologias.map((cada, index) => {
               return (
                 <div className='flex flex-row justify-start items-center w-full text-white text-xl font-medium gap-3 pb-3 opacity-0' id={'tecnologia' + index.toString()}
-                    onLoad={div_animadas.push('tecnologia' + index.toString())}>
+                     /* @ts-ignore */
+                     onLoad={div_animadas.push('tecnologia' + index.toString())}>
                   {cada.marcacao}
                   {cada.icone_tecnologia}
                   {cada.nome}                
@@ -293,28 +296,28 @@ useEffect(() => { //useEffect para carregar as animações e transições de div
         </div>
       </div>
 
-      <div className='w-full opacity-100 flex justify-center items-center px-16 mb-96'>
-            <div className='bg-black flex justify-center items-center rounded-xl border-[1px] border-gray-600 -mt-40 drop-shadow-2xl'>
+      <div className='w-full flex px-16 mb-96'>
+            <div className='bg-black flex rounded-xl border-[1px] border-gray-600 -mt-40 drop-shadow-2xl'>
               
-              <div className='border-r-[1px] border-gray-700 px-20 py-14 flex flex-col items-center justify-center'>
+              <div className='border-r-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center w-2/6 h-full gap-7'>
 
-                <span className='text-3xl font-semibold text-defyellow'>LF Receitas</span>
+                <span className='text-3xl font-semibold text-defyellow row-span-2'>LF Receitas</span>
 
-                <span className='text-xl font-medium text-justify pt-5'>Sistema Web para cadastro de receitas sem a necessidade de cadastro, é gerado um código único no momento do cadastro da receita, código esse que é usado para futuras alterações. Trás consigo a possibilidade de buscar receitas, através de ingredientes individuais facilitando a busca para o usuário.</span>
+                <span className='text-xl font-medium text-justify pt-5 row-span-5'>Sistema Web para cadastro de receitas sem a necessidade de cadastro, é gerado um código único no momento do cadastro da receita, código esse que é usado para futuras alterações. Trás consigo a possibilidade de buscar receitas, através de ingredientes individuais facilitando a busca para o usuário.</span>
 
-                <div className='pt-20 place-self-start flex flex-row justify-center'>
+                <div className='place-self-start flex flex-row justify-center'>
                   <span className='text-xl font-semibold text-defyellow'>Front End: </span>
                   <Triangle size={24} className='text-white'/> 
                   <span className='text-xl font-medium'> Next.js</span>
                 </div>
 
-                <div className='pt-3 place-self-start flex flex-row justify-center'>
+                <div className='place-self-start flex flex-row justify-center'>
                   <span className='text-xl font-semibold text-defyellow'>Back End: </span>
                   <Hexagon size={24} className='text-green-600'/> 
                   <span className='text-xl font-medium'> Node</span>
                 </div>
 
-                <div className='pt-3 place-self-start flex flex-row justify-center text-lg font-medium'>
+                <div className='place-self-start flex flex-row justify-center text-lg font-medium row-span-2'>
                   <ul className='list-disc list-inside'>
                     <li>Tailwind</li>
                     <li>Typescript</li>
@@ -322,7 +325,7 @@ useEffect(() => { //useEffect para carregar as animações e transições de div
                   </ul> 
                 </div>
 
-                <div className='flex self-start justify-center hover:text-defyellow pt-5'>
+                <div className='flex place-self-start justify-center hover:text-defyellow'>
                   <a className="hover:text-defyellow flex flex-row justify-center" target="_blank" href='https://github.com/andreimattos06/LookingForRecipes'>
                     <span className='text-lg font-medium'>Git: </span>
                     <GithubLogo size={23} /> 
@@ -331,32 +334,33 @@ useEffect(() => { //useEffect para carregar as animações e transições de div
                 </div>
                 
 
-
-                <button className='hover:bg-white rounded-2xl p-4 text-black bg-defyellow hover:text-defyellow transition-all duration-700 mt-5'>
-                  <MagnifyingGlassPlus size={40} className=''/>
-                </button>
+                <div className='h-full flex justify-center items-end row-span-3'>
+                  <button className='hover:bg-white rounded-2xl p-4 text-black bg-defyellow hover:text-defyellow transition-all duration-700 mt-5'>
+                    <MagnifyingGlassPlus size={40} className=''/>
+                  </button>
+                </div>
 
               </div>
                       
-              <div className='border-r-[1px] border-gray-700 px-20 py-14 flex flex-col items-center justify-center'>
+              <div className='border-r-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center w-2/6 h-full gap-7'>
 
-                <span className='text-3xl font-semibold text-defyellow'>Shop Guns</span>
+                <span className='text-3xl font-semibold text-defyellow row-span-2'>Shop Guns</span>
 
-                <span className='text-xl font-medium text-justify pt-5'>Sistema Web feito para criação de anúncios de vendas de armamentos, dentro da sua devida legalidade. O sistema conta com suporte a criação de cadastro, criação de anúncios, busca de anúncios, filtro de anúncios, edição de anúncio, etc.</span>
+                <span className='text-xl font-medium text-justify row-span-5'>Sistema Web feito para criação de anúncios de vendas de armamentos, dentro da sua devida legalidade. O sistema conta com suporte a criação de cadastro, criação de anúncios, busca de anúncios, filtro de anúncios, edição de anúncio, etc.</span>
 
-                <div className='pt-20 place-self-start flex flex-row justify-center'>
+                <div className='place-self-start flex flex-row justify-center'>
                   <span className='text-xl font-semibold text-defyellow'>Front End: </span>
                   <Atom size={24} className='text-blue-400'/> 
                   <span className='text-xl font-medium'> React</span>
                 </div>
 
-                <div className='pt-3 place-self-start flex flex-row justify-center'>
+                <div className='place-self-start flex flex-row justify-center'>
                   <span className='text-xl font-semibold text-defyellow'>Back End: </span>
                   <Hexagon size={24} className='text-green-600'/> 
                   <span className='text-xl font-medium'> Node</span>
                 </div>
 
-                <div className='pt-3 place-self-start flex flex-row justify-center text-lg font-medium'>
+                <div className='place-self-start flex flex-row justify-center text-lg font-medium row-span-2'>
                   <ul className='list-disc list-inside'>
                     <li>Tailwind</li>
                     <li>Typescript</li>
@@ -364,7 +368,7 @@ useEffect(() => { //useEffect para carregar as animações e transições de div
                   </ul> 
                 </div>
 
-                <div className='flex self-start justify-center hover:text-defyellow pt-5'>
+                <div className='flex justify-self-start justify-center hover:text-defyellow'>
                   <a className="hover:text-defyellow flex flex-row justify-center" target="_blank" href='https://github.com/andreimattos06/ShopGuns'>
                     <span className='text-lg font-medium'>Git: </span>
                     <GithubLogo size={23} /> 
@@ -374,37 +378,41 @@ useEffect(() => { //useEffect para carregar as animações e transições de div
                 
 
 
-                <button className='hover:bg-white rounded-2xl p-4 text-black bg-defyellow hover:text-defyellow transition-all duration-700 mt-5'>
-                  <MagnifyingGlassPlus size={40} className=''/>
-                </button>
+                <div className='h-full flex justify-center items-end row-span-3'>
+                  <button className='hover:bg-white rounded-2xl p-4 text-black bg-defyellow hover:text-defyellow transition-all duration-700'>
+                    <MagnifyingGlassPlus size={40} className=''/>
+                  </button>
+                </div>
 
               </div>
 
-              <div className='border-gray-700 px-20 py-14 flex flex-col items-center self-start'>
+              <div className='px-20 py-14 grid grid-rows-{15} place-items-center w-2/6 h-full gap-7'>
 
-                <span className='text-3xl font-semibold text-defyellow'>KF Beauty</span>
+                <span className='text-3xl font-semibold text-defyellow row-span-2'>KF Beauty</span>
 
-                <span className='text-xl font-medium text-justify pt-5'>Página Web simples apenas para divulgação dos procedimentos estéticos realizados por uma esteticista, página apenas com informações de cada procedimento, possibilidade de agendar atendimentos através de site com redirecionamento para o whatsapp.</span>
+                <span className='text-xl font-medium text-justify row-span-5'>Página Web simples apenas para divulgação dos procedimentos estéticos realizados por uma esteticista, página apenas com informações de cada procedimento, possibilidade de agendar atendimentos através de site com redirecionamento para o whatsapp.</span>
 
-                <div className='pt-20 place-self-start flex flex-row justify-center'>
+                <div className='place-self-start flex flex-row justify-center'>
                   <span className='text-xl font-semibold text-defyellow'>Front End: </span>
                   <TagSimple size={24} className='text-blue-400 rotate-90'/> 
                   <span className='text-xl font-medium'>HTML e CSS</span>
                 </div>
 
 
-
-                <div className='flex self-start justify-center hover:text-defyellow pt-5'>
+                <div className='flex justify-self-start justify-center hover:text-defyellow'>
                   <a className="hover:text-defyellow flex flex-row justify-center" target="_blank" href='https://github.com/andreimattos06/KFBeauty'>
                     <span className='text-lg font-medium'>Git: </span>
                     <GithubLogo size={23} /> 
-                  </a>
+                  </a>                  
                  
                 </div>
-
-                  <button className='hover:bg-white rounded-2xl p-4 text-black bg-defyellow hover:text-defyellow transition-all duration-700 mt-5 h-auto grow'>
+                
+                <div className='h-full flex justify-center items-end row-span-6'>
+                  <button className='hover:bg-white rounded-2xl p-4 text-black bg-defyellow hover:text-defyellow transition-all duration-700'>
                     <MagnifyingGlassPlus size={40} className=''/>
                   </button>
+                </div>
+                
 
               </div>
 
@@ -415,12 +423,16 @@ useEffect(() => { //useEffect para carregar as animações e transições de div
         <div className='w-full flex-row flex text-defyellow text-5xl tracking-tighter font-bold justify-center items-center gap-5'>
           <hr className='grow border-defyellow border-2'/>
           <div>
+           {/* @ts-ignore */}
             <span className='opacity-0' id="For"  onLoad={texto_animado.push("For")}>For</span>
             <span className=''>mações</span>
+             {/* @ts-ignore */}
             <span className='opacity-0' id="e"  onLoad={texto_animado.push("e")}> e </span>
             <span className=''>Partici</span>
+             {/* @ts-ignore */}
             <span className='opacity-0' id="pacoesem"  onLoad={texto_animado.push("pacoesem")}>pações em</span>
             <span className='' > Even</span>
+             {/* @ts-ignore */}
             <span className='opacity-0'id="tos"  onLoad={texto_animado.push("tos")}>tos</span>
           </div>
           
@@ -433,9 +445,9 @@ useEffect(() => { //useEffect para carregar as animações e transições de div
 
 
           <div className='col-span-4 bg-defyellow w-full rounded-r-md -left-96 relative' id="esquerda1">
-            <div className='flex items-center justify-between py-5 px-5 gap-5'>
+            <div className='flex items-center justify-start py-5 px-5 gap-5'>
               <GraduationCap size={80} className='text-black'/>
-              <div className='flex flex-col justify-center items-center text-xl text-black font-semibold'>
+              <div className='flex flex-col justify-center items-center text-xl text-black font-semibold w-full'>
                 <span>Bacharel</span>
                 <span>Sistemas de Informação</span>
                 <span>UFGD - Universidade Federal da Grande Dourados</span>
@@ -448,72 +460,60 @@ useEffect(() => { //useEffect para carregar as animações e transições de div
           </div>
           <div className='col-span-4'>
           </div>
-
+             {/* @ts-ignore */}
           <div className='col-span-9' onLoad={div_animadas_slide_left.push("esquerda1")}/>
 
 
 
-          <div className='col-span-4 '>
-          </div>
-          <div className='col-span-1 text-4xl font-bold'>
-            2019
-          </div>
-          <div className='col-span-4 bg-defyellow w-full rounded-l-md -right-96 relative' id="direita1">         
-            <div className='flex items-center justify-between py-5 px-5 gap-5'>
-              <GraduationCap size={80} className='text-black'/>
-              <div className='flex flex-col justify-center items-center text-xl text-black font-semibold'>
-                <span>Bacharel</span>
-                <span>Sistemas de Informação</span>
-                <span>UFGD - Universidade Federal da Grande Dourados</span>
-
+          <div className='col-span-4 bg-defyellow w-full rounded-r-md -right-96 relative' id="esquerda2">         
+            <div className='flex items-center justify-start py-5 px-5 gap-5'>
+              <Certificate size={80} className='text-black'/>
+              <div className='flex flex-col justify-center items-center text-xl text-black font-semibold w-full'>
+                <span>Cursos</span>
+                <span>Desenvolvimento Web</span>
+                <span>HTML, CSS, JavaScript e TypeScript</span>
               </div>
+              
             </div>
           </div> 
-          <div className='col-span-9' onLoad={div_animadas_slide_right.push("direita1")}/>
+           {/* @ts-ignore */}
+          <div className='col-span-1 text-4xl font-bold'>
+            2022
+          </div>
+          <div className='col-span-4 bg-defyellow w-full rounded-l-md -right-96 relative' id="direita1">         
+            <div className='flex items-center justify-start py-5 px-5 gap-5'>
+              
+              <div className='flex flex-col justify-center items-center text-xl text-black font-semibold w-full'>
+                <span>Evento</span>
+                <span>Rocketseat - Next Level Week</span>
+                <span>E-Sports</span>
+              </div>
+              <RocketLaunch size={80} className='text-black'/>
+            </div>
+          </div> 
+           {/* @ts-ignore */}
+          <div className='col-span-9' onLoad={div_animadas_slide_right.push("direita1"), div_animadas_slide_left.push("esquerda2")}/>
 
 
 
-          <div className='col-span-4 bg-defyellow w-full rounded-r-md -left-96 relative' id="esquerda2">
-            <div className='flex items-center justify-between py-5 px-5 gap-5'>
-              <GraduationCap size={80} className='text-black'/>
-              <div className='flex flex-col justify-center items-center text-xl text-black font-semibold'>
-                <span>Bacharel</span>
-                <span>Sistemas de Informação</span>
-                <span>UFGD - Universidade Federal da Grande Dourados</span>
+          <div className='col-span-4 bg-defyellow w-full rounded-r-md -left-96 relative' id="esquerda3">
+            <div className='flex items-center justify-start py-5 px-5 gap-5'>
+              <Wrench size={80} className='text-black'/>
+              <div className='flex flex-col justify-center items-center text-xl text-black font-semibold w-full'>
+                <span>Evento</span>
+                <span>Rocketseat - Next Level Week</span>
+                <span>Setup</span>
 
               </div>
             </div>
           </div>
           <div className='col-span-1 text-4xl font-bold'>
-            2019
+            2023
           </div>
           <div className='col-span-4'>
           </div>
-
-          <div className='col-span-9' onLoad={div_animadas_slide_left.push("esquerda2")}/>
-
-
-
-          <div className='col-span-4 '>
-          </div>
-          <div className='col-span-1 text-4xl font-bold'>
-            2019
-          </div>
-          <div className='col-span-4 bg-defyellow w-full rounded-l-md -right-96 relative' id="direita2">         
-            <div className='flex items-center justify-between py-5 px-5 gap-5'>
-              <GraduationCap size={80} className='text-black'/>
-              <div className='flex flex-col justify-center items-center text-xl text-black font-semibold'>
-                <span>Bacharel</span>
-                <span>Sistemas de Informação</span>
-                <span>UFGD - Universidade Federal da Grande Dourados</span>
-
-              </div>
-            </div>
-          </div> 
-          <div className='col-span-9' onLoad={div_animadas_slide_right.push("direita2")}/>
-
-
-
+             {/* @ts-ignore */}
+          <div className='col-span-9' onLoad={div_animadas_slide_left.push("esquerda3")}/>
 
         </div>
       </div>
