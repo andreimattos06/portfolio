@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import './App.css'
 import './components/Header'
 import { Header } from './components/Header'
-import { Atom, DotOutline, EnvelopeSimple, Fire, GithubLogo, InstagramLogo, LinkedinLogo, FileTs, Triangle, Hexagon, Equals, Seal, FileJs, MagnifyingGlassPlus, TagSimple, GraduationCap, Rocket, RocketLaunch, Wrench, Certificate } from '@phosphor-icons/react'
+import { Atom, DotOutline, EnvelopeSimple, Fire, GithubLogo, InstagramLogo, LinkedinLogo, FileTs, Triangle, Hexagon, Equals, Seal, FileJs, MagnifyingGlassPlus, TagSimple, GraduationCap, RocketLaunch, Wrench, Certificate } from '@phosphor-icons/react'
 
 
 interface ferramentasETecnologias{
