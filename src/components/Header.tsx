@@ -1,8 +1,14 @@
 import { List, X } from "@phosphor-icons/react";
 import { LogoAnimado } from "./LogoAnimado";
 import { useEffect, useState } from "react";
+import clsx from "clsx";
 
-export function Header(){
+interface HeaderProps{
+    lingua: boolean
+    updateLinguagem: (newLinguagem: boolean) => void
+}
+
+export function Header(props: HeaderProps){
 
 const [isMenuOpen, setIsMenuOpen] = useState(false)
 const [buttonMenuDiv, setButtonMenuDiv] = useState(true)
@@ -14,6 +20,8 @@ useEffect(() => {
         document.body.style.overflowY = 'hidden'
     }
 },[isMenuOpen])
+
+
 
 function clickMenu(){
     let id:any = null;
@@ -107,8 +115,6 @@ function clickMenu(){
 }
 
 
-
-
     return(
         <>
             
@@ -135,12 +141,22 @@ function clickMenu(){
                 <div id="opcoes_menu" className="opacity-0">
                     {opcoesMenu ? 
                         <div className="grid grid-cols-1 pt-32 text-6xl gap-10 font-semibold content-center place-items-center" >
+
                                 <span className="text-defyellow">Home</span>
                                 <span>Sobre</span>
                                 <span>Contato</span>
+                                <div className="flex flex-row w-full gap-3 items-center justify-center">
+                                    <button className={clsx('w-[3.24rem] hover:opacity-100', {'opacity-40' : !props.lingua})} onClick={() => props.updateLinguagem(true)}>
+                                        <img src="brasil.svg" />
+                                    </button>
+                                    <button className={clsx('w-14 hover:opacity-100', {'opacity-40' : props.lingua})} onClick={() => props.updateLinguagem(false)}>
+                                        <img src="english.svg" />
+                                    </button>
+                                    
+                                </div>
                                 
-
                         </div> 
+
                         : 
                         <></>
                     }

@@ -1,9 +1,10 @@
-import { ReactElement, ReactEventHandler} from 'react'
+import { ReactElement, ReactEventHandler, useState} from 'react'
 import { useEffect } from 'react'
 import './App.css'
 import './components/Header'
 import { Header } from './components/Header'
-import { Atom, DotOutline, EnvelopeSimple, Fire, GithubLogo, InstagramLogo, LinkedinLogo, FileTs, Triangle, Hexagon, Equals, Seal, FileJs, MagnifyingGlassPlus, TagSimple, GraduationCap, RocketLaunch, Wrench, Certificate } from '@phosphor-icons/react'
+import { Atom, DotOutline, EnvelopeSimple, Fire, GithubLogo, InstagramLogo, LinkedinLogo, FileTs, Triangle, Hexagon, Equals, Seal, FileJs, MagnifyingGlassPlus, TagSimple, GraduationCap, RocketLaunch, Wrench, Certificate, User, TextAlignJustify, PaperPlaneTilt } from '@phosphor-icons/react'
+import { Input } from './components/Input'
 
 
 interface ferramentasETecnologias{
@@ -43,6 +44,11 @@ let div_animadas: string[] = []
 let div_animadas_slide_left: string[] = []
 let div_animadas_slide_right: string[] = []
 let texto_animado: string[] = []
+
+const [linguagem, setLinguagem] = useState(true)
+const updateLinguagem = (newLinguagem: boolean) => {
+  setLinguagem(newLinguagem)
+}
 
 function hideElement(elemento: HTMLElement | null){
   if(elemento){
@@ -230,7 +236,7 @@ useEffect(() => { //useEffect para carregar as animações e transições de div
             
         </div>
         
-      <Header />
+      <Header lingua={linguagem} updateLinguagem={updateLinguagem}/>
 
       <div className='bg-black h-screen mb-[-64px]'>
         <div className='flex flex-col items-center justify-center mt-20 gap-10'>
@@ -518,8 +524,24 @@ useEffect(() => { //useEffect para carregar as animações e transições de div
         </div>
       </div>
 
-      <div>
-        <br/><br/><br/><br/><br/><br/><br/><br/>
+      <div className='w-full flex-row flex text-defyellow text-5xl tracking-tighter font-bold items-center gap-5 mt-48'>
+        <hr className='border-defyellow border-2 w-1/12'/>
+        <span className='text-defyellow text-5xl'>Contato</span>
+        <hr className='grow border-defyellow border-2'/>
+      </div>
+
+      <div className='w-full flex justify-center items-center'>  {/*NÃO FINALIZADO, necessario fazer as variáveis e o processo de envio */}
+        <div className='w-6/12 grid grid-cols-1 mt-20 gap-5'>
+            <Input placeholder='Nome Completo' icon={<User size={32} />}/>
+            <Input placeholder='E-Mail' icon={<EnvelopeSimple size={32} />}/>
+            <Input placeholder='Mensagem...' icon={<TextAlignJustify size={32} />}/>
+
+            <button className='flex items-center gap-3 border-2 py-2 border-defyellow text-defyellow justify-center bg-black w-2/12 hover:bg-defyellow hover:text-black duration-700'><PaperPlaneTilt size={32}/> Enviar</button>
+        </div>
+      </div>
+
+      <div className='w-full mt-28 flex items-center justify-center text-white text-xs'>
+            <span>Andrei dos Santos Mattos - 2023</span>
       </div>
       
       
