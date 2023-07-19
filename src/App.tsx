@@ -5,6 +5,7 @@ import './components/Header'
 import { Header } from './components/Header'
 import { Atom, DotOutline, EnvelopeSimple, Fire, GithubLogo, InstagramLogo, LinkedinLogo, FileTs, Triangle, Hexagon, Equals, Seal, FileJs, MagnifyingGlassPlus, TagSimple, GraduationCap, RocketLaunch, Wrench, Certificate, User, TextAlignJustify, PaperPlaneTilt } from '@phosphor-icons/react'
 import { Input } from './components/Input'
+import * as Dialog  from '@radix-ui/react-dialog'
 
 
 interface ferramentasETecnologias{
@@ -303,6 +304,7 @@ useEffect(() => { //useEffect para carregar as animações e transições de div
       </div>
 
       <div className='w-full flex px-16 mb-96'>
+        
             <div className='bg-black flex rounded-xl border-[1px] border-gray-600 -mt-40 drop-shadow-2xl'>
               
               <div className='border-r-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center w-2/6 h-full gap-7'>
@@ -339,12 +341,23 @@ useEffect(() => { //useEffect para carregar as animações e transições de div
                  
                 </div>
                 
-
-                <div className='h-full flex justify-center items-end row-span-3'>
-                  <button className='hover:bg-white rounded-2xl p-4 text-black bg-defyellow hover:text-defyellow transition-all duration-700 mt-5'>
-                    <MagnifyingGlassPlus size={40} className=''/>
-                  </button>
-                </div>
+                <Dialog.Root>
+                  <div className='h-full flex justify-center items-end row-span-3'>
+                    <Dialog.Trigger>
+                      <button className='hover:bg-white rounded-2xl p-4 text-black bg-defyellow hover:text-defyellow transition-all duration-700 mt-5'>
+                        <MagnifyingGlassPlus size={40} className=''/>
+                      </button>
+                    </Dialog.Trigger>
+                  </div>
+                  <Dialog.Portal>
+                    <Dialog.Overlay className='bg-black fixed inset-0 opacity-40'/>
+                    <Dialog.Content className='fixed w-8/12 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center'>
+                      <div className='bg-black w-full flex border-2 border-defyellow rounded-md justify-center items-center'>
+                        <img src="teste.gif" className='w-full'/>
+                      </div>
+                    </Dialog.Content>
+                  </Dialog.Portal>
+                </Dialog.Root>
 
               </div>
                       
