@@ -15,6 +15,10 @@ interface ferramentasETecnologias{
   icone_pericia: ReactElement
 }
 
+interface textos{
+  [key: string]: string;
+}
+
 function App() {
 
 const tecnologias: ferramentasETecnologias[] = [
@@ -40,6 +44,23 @@ const tecnologias: ferramentasETecnologias[] = [
     nome: "Jasmine", marcacao: <DotOutline size={28}/>, icone_tecnologia: <Seal size={28} className='text-defyellow'/>, icone_pericia: <Equals size={28} className='bg-yellow-500 rounded-full p-1'/>
   }
 ]
+
+const [array_textos, setArrayTextos] = useState<textos>({})
+const texto_ingles: textos = {}
+const texto_portugues: textos = {}
+
+/** Começo dos textos, os valores são estáticos e podem variar de linguagem, portanto são armazenados em arrays */
+texto_portugues["titulo_inicial"] = "Bem-Vindo"
+texto_ingles["titulo_inicial"] = "Welcome"
+
+texto_portugues["texto_inicial"] = "Meu nome é Andrei Mattos, sou desenvolvedor Front-End, atualmente resido em Goiás - Brasil."
+texto_ingles["texto_inicial"] = "My name is Andrei Mattos, I'm a Front-End developer, actually reside in Brazil - Goiás."
+
+texto_portugues["titulo_tecnologia"] = "Ferramentas e Tecnologias"
+texto_ingles["titulo_tecnologia"] = "Tools and Technologies"
+/** --------------------------Fim dos Textos -------------------------------- */
+
+
 
 let div_animadas: string[] = []
 let div_animadas_slide_left: string[] = []
@@ -141,8 +162,24 @@ function onShowVP(elementoID: string, funcao_exec: Function, tempo: number): Rea
     return undefined;
 }
 
+function deepCopy(obj: any): any {
+  if (obj === null || typeof obj !== 'object') {
+    return obj;
+  }
+
+  const copy: any = Array.isArray(obj) ? [] : {};
+  for (const key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      copy[key] = deepCopy(obj[key]);
+    }
+  }
+
+  return copy;
+}
+
 
 useEffect(() => {
+  setArrayTextos(deepCopy(texto_portugues))
   document.body.style.overflowX = 'hidden' 
   document.body.style.overflowY = 'hidden' 
   let timer_inicial = 0
@@ -217,6 +254,17 @@ useEffect(() => { //useEffect para carregar as animações e transições de div
 
 },[])
 
+useEffect(() => {
+  
+  if (linguagem){
+    setArrayTextos(deepCopy(texto_portugues))
+    
+  }
+  else{
+    setArrayTextos(deepCopy(texto_ingles))
+    console.log(array_textos)
+  }
+}, [linguagem])
 
   return (
     
@@ -242,7 +290,7 @@ useEffect(() => { //useEffect para carregar as animações e transições de div
       <div className='bg-black h-screen mb-[-64px]'>
         <div className='flex flex-col items-center justify-center mt-20 gap-10'>
           <div className='text-defyellow font-bold text-7xl tracking-tighter'>
-            <span>Bem Vindo</span>
+            <span>{array_textos!['titulo_inicial']}</span>
           </div>
 
           <div className='flex items-center justify-center'>
@@ -250,7 +298,7 @@ useEffect(() => { //useEffect para carregar as animações e transições de div
           </div>
 
           <div className='flex flex-col items-center justify-center w-2/4 font-medium gap-5'>
-            <span className=' border-l-defyellow border-l-2 pl-3'>Meu nome é Andrei Mattos, sou desenvolvedor Front-End, atualmente resido em Goiás - Brasil.               
+            <span className=' border-l-defyellow border-l-2 pl-3'>{array_textos!['texto_inicial']}               
             </span>
             <div className='flex justify-center items-center gap-7'>
               <a className="hover:text-defyellow" target="_blank" href='https://www.linkedin.com/in/andrei-mattos-8aa873163/'> <LinkedinLogo size={32} /> </a>
@@ -268,7 +316,7 @@ useEffect(() => { //useEffect para carregar as animações e transições de div
 
         <div className='flex flex-col justify-center items-start w-4/6'>
 
-          <span className='text-defyellow text-5xl font-bold tracking-tighter pb-12'>Ferramentas e Tecnologias</span>
+          <span className='text-defyellow text-5xl font-bold tracking-tighter pb-12'>{array_textos!['titulo_tecnologia']}</span>
 
           <div className='border-l-[1px] border-defyellow pl-3' id="tecnologias">
 
@@ -353,7 +401,10 @@ useEffect(() => { //useEffect para carregar as animações e transições de div
                     <Dialog.Overlay className='bg-black fixed inset-0 opacity-40'/>
                     <Dialog.Content className='fixed w-8/12 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center'>
                       <div className='bg-black w-full flex border-2 border-defyellow rounded-md justify-center items-center'>
-                        <img src="teste.gif" className='w-full'/>
+                        {/**<img src="teste.gif" className='w-full'/> **/}
+                        <iframe src="https://www.youtube.com/embed/aFpdO-0vrzs?autoplay=1&mute=1" width="1280" height="720" allow="autoplay">
+
+                        </iframe>
                       </div>
                     </Dialog.Content>
                   </Dialog.Portal>
