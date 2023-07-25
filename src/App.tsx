@@ -264,6 +264,19 @@ function deepCopy(obj: any): any {
 
 useEffect(() => {
   setArrayTextos(deepCopy(texto_portugues))
+
+  fetch('https://geo.ipify.org/api/v2/country?apiKey=at_NXqtHoWCW8UFp7j8of2kjgIbjwVyn')
+  .then(response => response.json())
+  .then(data => {
+    const client_country = data.location.country;
+    if(client_country != "BR"){
+      setArrayTextos(deepCopy(texto_ingles))
+    }
+  })
+  .catch(error => {
+    console.error('Erro ao obter o IP:', error);
+  });
+
   document.body.style.overflowX = 'hidden' 
   document.body.style.overflowY = 'hidden' 
   let timer_inicial = 0
@@ -275,8 +288,6 @@ useEffect(() => {
   
 
   timer_inicial = setInterval(contarTempo, 1000)
-
-  
 
   function contarTempo(){
     if (cont > 1){
