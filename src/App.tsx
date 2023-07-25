@@ -58,6 +58,90 @@ texto_ingles["texto_inicial"] = "My name is Andrei Mattos, I'm a Front-End devel
 
 texto_portugues["titulo_tecnologia"] = "Ferramentas e Tecnologias"
 texto_ingles["titulo_tecnologia"] = "Tools and Technologies"
+
+texto_portugues["titulo_projetos"] = "Projetos"
+texto_ingles["titulo_projetos"] = "Projects"
+
+texto_portugues["texto_projetos"] = "Os projetos abaixo não foram realizados para fins comerciais, os mesmo foram elaborados e desenvolvidos apenas para fins de estudo e aperfeiçoamento na utilização de tecnologias diferentes. "
+texto_ingles["texto_projetos"] = "The projects below were not carried out for commercial purposes, they were designed and developed only for study purposes and improving the use of different technologies."
+
+texto_portugues["titulo_lfreceitas"] = "LF Receitas"
+texto_ingles["titulo_lfreceitas"] = "LF Receitas"
+
+texto_portugues["texto_lfreceitas"] = "Sistema Web para cadastro de receitas sem a necessidade de cadastro, é gerado um código único no momento do cadastro da receita, código esse que é usado para futuras alterações. Trás consigo a possibilidade de buscar receitas, através de ingredientes individuais facilitando a busca para o usuário."
+texto_ingles["texto_lfreceitas"] = "Web system for registering recipes without necessity of register, a unique code is generated when registering the recipe, this code is used for future changes. It brings the possibility of searching the recipes through individual ingredients, making the search easier for the user"
+
+texto_portugues["titulo_shopguns"] = "Shop Guns"
+texto_ingles["titulo_shopguns"] = "Shop Guns"
+
+texto_portugues["texto_shopguns"] = "Sistema Web feito para criação de anúncios de vendas de armamentos, dentro da sua devida legalidade. O sistema conta com suporte a criação de cadastro, criação de anúncios, busca de anúncios, filtro de anúncios, edição de anúncio, etc."
+texto_ingles["texto_shopguns"] = "Web system made for creation weapons sale advertisements, within its due legality. The system supports the creation of advertisements, search of advertisements, filter of advertisements, edition of advertisement, and other things."
+
+texto_portugues["titulo_kfbeauty"] = "KF Beauty"
+texto_ingles["titulo_kfbeauty"] = "KF Beauty"
+
+texto_portugues["texto_kfbeauty"] = "Página Web simples apenas para divulgação dos procedimentos estéticos realizados por uma esteticista, página apenas com informações de cada procedimento, possibilidade de agendar atendimentos através de site com redirecionamento para o whatsapp."
+texto_ingles["texto_kfbeauty"] = "Simple web page only for disclosing the aesthetic procedures realized by a beautician, page only with information of each procedure, possibility to schedule appointments through the website with redirect to whatsapp."
+
+texto_portugues["titulo_fpe1"] = "For"
+texto_ingles["titulo_fpe1"] = "For"
+texto_portugues["titulo_fpe2"] = "mações"
+texto_ingles["titulo_fpe2"] = "mations"
+texto_portugues["titulo_fpe3"] = "e"
+texto_ingles["titulo_fpe3"] = "and"
+texto_portugues["titulo_fpe4"] = "Partici"
+texto_ingles["titulo_fpe4"] = "Partici"
+texto_portugues["titulo_fpe5"] = "pações em "
+texto_ingles["titulo_fpe5"] = "pations in "
+texto_portugues["titulo_fpe6"] = "Even"
+texto_ingles["titulo_fpe6"] = "Even"
+texto_portugues["titulo_fpe7"] = "tos"
+texto_ingles["titulo_fpe7"] = "ts"
+
+texto_portugues["tipo_fpe1"] = "Bacharel"
+texto_ingles["tipo_fpe1"] = "Bachelor"
+texto_portugues["nome_fpe1"] = "Sistemas de Informação"
+texto_ingles["nome_fpe1"] = "Information Systems"
+texto_portugues["lugar_fpe1"] = "UFGD - Universidade Federal da Grande Dourados"
+texto_ingles["lugar_fpe1"] = "UFGD - Federal University of Grande Dourados"
+
+texto_portugues["tipo_fpe2"] = "Cursos"
+texto_ingles["tipo_fpe2"] = "Courses"
+texto_portugues["nome_fpe2"] = "Desenvolvimento Web"
+texto_ingles["nome_fpe2"] = "Web Development"
+texto_portugues["lugar_fpe2"] = "HTML, CSS, JavaScript e TypeScript"
+texto_ingles["lugar_fpe2"] = "HTML, CSS, JavaScript e TypeScript"
+
+texto_portugues["tipo_fpe3"] = "Evento"
+texto_ingles["tipo_fpe3"] = "Event"
+texto_portugues["nome_fpe3"] = "Rocketseat - Next Level Week"
+texto_ingles["nome_fpe3"] = "Rocketseat - Next Level Week"
+texto_portugues["lugar_fpe3"] = "E-Sports"
+texto_ingles["lugar_fpe3"] = "E-Sports"
+
+texto_portugues["tipo_fpe4"] = "Evento"
+texto_ingles["tipo_fpe4"] = "Event"
+texto_portugues["nome_fpe4"] = "Rocketseat - Next Level Week"
+texto_ingles["nome_fpe4"] = "Rocketseat - Next Level Week"
+texto_portugues["lugar_fpe4"] = "Setup"
+texto_ingles["lugar_fpe4"] = "Setup"
+
+texto_portugues["titulo_contato"] = "Contato"
+texto_ingles["titulo_contato"] = "Contact"
+
+texto_portugues["nome_placeholder"] = "Nome Completo"
+texto_ingles["nome_placeholder"] = "Full Name"
+
+texto_portugues["email_placeholder"] = "E-mail"
+texto_ingles["email_placeholder"] = "E-mail"
+
+texto_portugues["mensagem_placeholder"] = "Mensagem..."
+texto_ingles["mensagem_placeholder"] = "Message..."
+
+texto_portugues["bottao_enviar"] = "Enviar"
+texto_ingles["bottao_enviar"] = "Send"
+
+
 /** --------------------------Fim dos Textos -------------------------------- */
 
 
@@ -346,8 +430,8 @@ useEffect(() => {
 
       <div className='bg-defyellow w-full flex justify-center'>
         <div className='flex flex-col items-center justify-center text-black py-64 w-6/12 gap-10 text-justify'>
-            <span className='text-5xl font-bold'>Projetos</span>
-            <span>Os projetos abaixo não foram realizados para fins comerciais, os mesmo foram elaborados e desenvolvidos apenas para fins de estudo e aperfeiçoamento na utilização de tecnologias diferentes. </span>    
+            <span className='text-5xl font-bold'>{array_textos["titulo_projetos"]}</span>
+            <span>{array_textos["texto_projetos"]}</span>    
         </div>
       </div>
 
@@ -357,9 +441,9 @@ useEffect(() => {
               
               <div className='border-r-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center w-2/6 h-full gap-7'>
 
-                <span className='text-3xl font-semibold text-defyellow row-span-2'>LF Receitas</span>
+                <span className='text-3xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_lfreceitas"]}</span>
 
-                <span className='text-xl font-medium text-justify pt-5 row-span-5'>Sistema Web para cadastro de receitas sem a necessidade de cadastro, é gerado um código único no momento do cadastro da receita, código esse que é usado para futuras alterações. Trás consigo a possibilidade de buscar receitas, através de ingredientes individuais facilitando a busca para o usuário.</span>
+                <span className='text-xl font-medium text-justify pt-5 row-span-5'>{array_textos["texto_lfreceitas"]}</span>
 
                 <div className='place-self-start flex flex-row justify-center'>
                   <span className='text-xl font-semibold text-defyellow'>Front End: </span>
@@ -414,9 +498,9 @@ useEffect(() => {
                       
               <div className='border-r-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center w-2/6 h-full gap-7'>
 
-                <span className='text-3xl font-semibold text-defyellow row-span-2'>Shop Guns</span>
+                <span className='text-3xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_shopguns"]}s</span>
 
-                <span className='text-xl font-medium text-justify row-span-5'>Sistema Web feito para criação de anúncios de vendas de armamentos, dentro da sua devida legalidade. O sistema conta com suporte a criação de cadastro, criação de anúncios, busca de anúncios, filtro de anúncios, edição de anúncio, etc.</span>
+                <span className='text-xl font-medium text-justify row-span-5'>{array_textos["texto_shopguns"]}</span>
 
                 <div className='place-self-start flex flex-row justify-center'>
                   <span className='text-xl font-semibold text-defyellow'>Front End: </span>
@@ -458,9 +542,9 @@ useEffect(() => {
 
               <div className='px-20 py-14 grid grid-rows-{15} place-items-center w-2/6 h-full gap-7'>
 
-                <span className='text-3xl font-semibold text-defyellow row-span-2'>KF Beauty</span>
+                <span className='text-3xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_kfbeauty"]}</span>
 
-                <span className='text-xl font-medium text-justify row-span-5'>Página Web simples apenas para divulgação dos procedimentos estéticos realizados por uma esteticista, página apenas com informações de cada procedimento, possibilidade de agendar atendimentos através de site com redirecionamento para o whatsapp.</span>
+                <span className='text-xl font-medium text-justify row-span-5'>{array_textos["texto_kfbeauty"]}</span>
 
                 <div className='place-self-start flex flex-row justify-center'>
                   <span className='text-xl font-semibold text-defyellow'>Front End: </span>
@@ -494,16 +578,16 @@ useEffect(() => {
           <hr className='grow border-defyellow border-2'/>
           <div>
            {/* @ts-ignore */}
-            <span className='opacity-0' id="For"  onLoad={texto_animado.push("For")}>For</span>
-            <span className=''>mações</span>
+            <span className='opacity-0' id="For"  onLoad={texto_animado.push("For")}>{array_textos["titulo_fpe1"]}</span>
+            <span className=''>{array_textos["titulo_fpe2"]}</span>
              {/* @ts-ignore */}
-            <span className='opacity-0' id="e"  onLoad={texto_animado.push("e")}> e </span>
-            <span className=''>Partici</span>
+            <span className='opacity-0' id="e"  onLoad={texto_animado.push("e")}> {array_textos["titulo_fpe3"]} </span>
+            <span className=''>{array_textos["titulo_fpe4"]}</span>
              {/* @ts-ignore */}
-            <span className='opacity-0' id="pacoesem"  onLoad={texto_animado.push("pacoesem")}>pações em</span>
-            <span className='' > Even</span>
+            <span className='opacity-0' id="pacoesem"  onLoad={texto_animado.push("pacoesem")}>{array_textos["titulo_fpe5"]}</span>
+            <span className='' >{array_textos["titulo_fpe6"]}</span>
              {/* @ts-ignore */}
-            <span className='opacity-0'id="tos"  onLoad={texto_animado.push("tos")}>tos</span>
+            <span className='opacity-0'id="tos"  onLoad={texto_animado.push("tos")}>{array_textos["titulo_fpe7"]}</span>
           </div>
           
           <hr className='grow border-defyellow border-2'/>
@@ -518,9 +602,9 @@ useEffect(() => {
             <div className='flex items-center justify-start py-5 px-5 gap-5'>
               <GraduationCap size={80} className='text-black'/>
               <div className='flex flex-col justify-center items-center text-xl text-black font-semibold w-full'>
-                <span>Bacharel</span>
-                <span>Sistemas de Informação</span>
-                <span>UFGD - Universidade Federal da Grande Dourados</span>
+                <span>{array_textos["tipo_fpe1"]}</span>
+                <span>{array_textos["nome_fpe1"]}</span>
+                <span>{array_textos["lugar_fpe1"]}</span>
 
               </div>
             </div>
@@ -539,9 +623,9 @@ useEffect(() => {
             <div className='flex items-center justify-start py-5 px-5 gap-5'>
               <Certificate size={80} className='text-black'/>
               <div className='flex flex-col justify-center items-center text-xl text-black font-semibold w-full'>
-                <span>Cursos</span>
-                <span>Desenvolvimento Web</span>
-                <span>HTML, CSS, JavaScript e TypeScript</span>
+              <span>{array_textos["tipo_fpe2"]}</span>
+                <span>{array_textos["nome_fpe2"]}</span>
+                <span>{array_textos["lugar_fpe2"]}</span>
               </div>
               
             </div>
@@ -554,9 +638,9 @@ useEffect(() => {
             <div className='flex items-center justify-start py-5 px-5 gap-5'>
               
               <div className='flex flex-col justify-center items-center text-xl text-black font-semibold w-full'>
-                <span>Evento</span>
-                <span>Rocketseat - Next Level Week</span>
-                <span>E-Sports</span>
+                <span>{array_textos["tipo_fpe3"]}</span>
+                <span>{array_textos["nome_fpe3"]}</span>
+                <span>{array_textos["lugar_fpe3"]}</span>
               </div>
               <RocketLaunch size={80} className='text-black'/>
             </div>
@@ -570,9 +654,9 @@ useEffect(() => {
             <div className='flex items-center justify-start py-5 px-5 gap-5'>
               <Wrench size={80} className='text-black'/>
               <div className='flex flex-col justify-center items-center text-xl text-black font-semibold w-full'>
-                <span>Evento</span>
-                <span>Rocketseat - Next Level Week</span>
-                <span>Setup</span>
+                <span>{array_textos["tipo_fpe4"]}</span>
+                <span>{array_textos["nome_fpe4"]}</span>
+                <span>{array_textos["lugar_fpe4"]}</span>
 
               </div>
             </div>
@@ -590,17 +674,17 @@ useEffect(() => {
 
       <div className='w-full flex-row flex text-defyellow text-5xl tracking-tighter font-bold items-center gap-5 mt-48'>
         <hr className='border-defyellow border-2 w-1/12'/>
-        <span className='text-defyellow text-5xl'>Contato</span>
+        <span className='text-defyellow text-5xl'>{array_textos["titulo_contato"]}</span>
         <hr className='grow border-defyellow border-2'/>
       </div>
 
       <div className='w-full flex justify-center items-center'>  {/*NÃO FINALIZADO, necessario fazer as variáveis e o processo de envio */}
         <div className='w-6/12 grid grid-cols-1 mt-20 gap-5'>
-            <Input placeholder='Nome Completo' icon={<User size={32} />}/>
-            <Input placeholder='E-Mail' icon={<EnvelopeSimple size={32} />}/>
-            <Input placeholder='Mensagem...' icon={<TextAlignJustify size={32} />}/>
+            <Input placeholder={array_textos["nome_placeholder"]} icon={<User size={32} />}/>
+            <Input placeholder={array_textos["email_placeholder"]} icon={<EnvelopeSimple size={32} />}/>
+            <Input placeholder={array_textos["mensagem_placeholder"]} icon={<TextAlignJustify size={32} />}/>
 
-            <button className='flex items-center gap-3 border-2 py-2 border-defyellow text-defyellow justify-center bg-black w-2/12 hover:bg-defyellow hover:text-black duration-700'><PaperPlaneTilt size={32}/> Enviar</button>
+            <button className='flex items-center gap-3 border-2 py-2 border-defyellow text-defyellow justify-center bg-black w-2/12 hover:bg-defyellow hover:text-black duration-700'><PaperPlaneTilt size={32}/>{array_textos["bottao_enviar"]}</button>
         </div>
       </div>
 
