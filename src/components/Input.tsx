@@ -9,7 +9,7 @@ interface inputProps extends React.HTMLAttributes<HTMLDivElement> {
 
 
 
-export function Input (props: inputProps, ...rest: any){
+export function Input (props: inputProps){
 
     
 
