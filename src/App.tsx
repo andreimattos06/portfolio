@@ -269,6 +269,7 @@ useEffect(() => {
   .then(response => response.json())
   .then(data => {
     const client_country = data.countryCode;
+    console.log(client_country)
     if(client_country != "BR"){
       setArrayTextos(deepCopy(texto_ingles))
       setLinguagem(false)
