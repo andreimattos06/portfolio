@@ -146,10 +146,10 @@ function clickMenu(){
                                 <span>Sobre</span>
                                 <span>Contato</span>
                                 <div className="flex flex-row w-full gap-3 items-center justify-center">
-                                    <button className={clsx('w-[3.24rem] hover:opacity-100', {'opacity-40' : !props.lingua})} onClick={() => props.updateLinguagem(true)}>
+                                    <button className={clsx('w-[3.24rem] hover:opacity-100 duration-700', {'opacity-40' : !props.lingua})} onClick={() => props.updateLinguagem(true)}>
                                         <img src="brasil.svg" />
                                     </button>
-                                    <button className={clsx('w-14 hover:opacity-100', {'opacity-40' : props.lingua})} onClick={() => props.updateLinguagem(false)}>
+                                    <button className={clsx('w-14 hover:opacity-100 duration-700', {'opacity-40' : props.lingua})} onClick={() => props.updateLinguagem(false)}>
                                         <img src="english.svg" />
                                     </button>
                                     

@@ -45,10 +45,14 @@ const tecnologias: ferramentasETecnologias[] = [
   }
 ]
 
+const [send_nomecompleto, setSendNomeCompleto] = useState("")
+const [send_email, setSendEmail] = useState("")
+const [send_texto, setSendTexto] = useState("")
+
+
 const [array_textos, setArrayTextos] = useState<textos>({})
 const texto_ingles: textos = {}
 const texto_portugues: textos = {}
-
 /** Começo dos textos, os valores são estáticos e podem variar de linguagem, portanto são armazenados em arrays */
 texto_portugues["titulo_inicial"] = "Bem-Vindo"
 texto_ingles["titulo_inicial"] = "Welcome"
@@ -184,7 +188,6 @@ function moreOpacity(elemento: HTMLElement | null, tempo: number){ //Função pa
 function lrSlide(elemento: HTMLElement | null, tempo: number){
   let flag = 0;
   let cont = -24;
-  console.log(elemento)
   
   flag = setInterval(contarTempo, tempo)
 
@@ -196,7 +199,6 @@ function lrSlide(elemento: HTMLElement | null, tempo: number){
     else if(elemento){
       elemento.style.left = cont.toString() + 'rem'      
       cont++
-      console.log(cont)
     }
   }
 }
@@ -204,7 +206,6 @@ function lrSlide(elemento: HTMLElement | null, tempo: number){
 function rlSlide(elemento: HTMLElement | null, tempo: number){
   let flag = 0;
   let cont = -24;
-  console.log(elemento)
   
   flag = setInterval(contarTempo, tempo)
 
@@ -216,7 +217,6 @@ function rlSlide(elemento: HTMLElement | null, tempo: number){
     else if(elemento){
       elemento.style.right = cont.toString() + 'rem'      
       cont++
-      console.log(cont)
     }
   }
 }
@@ -265,12 +265,13 @@ function deepCopy(obj: any): any {
 useEffect(() => {
   setArrayTextos(deepCopy(texto_portugues))
 
-  fetch('https://geo.ipify.org/api/v2/country?apiKey=at_NXqtHoWCW8UFp7j8of2kjgIbjwVyn')
+  fetch('http://ip-api.com/json/')
   .then(response => response.json())
   .then(data => {
-    const client_country = data.location.country;
+    const client_country = data.countryCode;
     if(client_country != "BR"){
       setArrayTextos(deepCopy(texto_ingles))
+      setLinguagem(false)
     }
   })
   .catch(error => {
@@ -357,7 +358,6 @@ useEffect(() => {
   }
   else{
     setArrayTextos(deepCopy(texto_ingles))
-    console.log(array_textos)
   }
 }, [linguagem])
 
@@ -509,7 +509,7 @@ useEffect(() => {
                       
               <div className='border-r-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center w-2/6 h-full gap-7'>
 
-                <span className='text-3xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_shopguns"]}s</span>
+                <span className='text-3xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_shopguns"]}</span>
 
                 <span className='text-xl font-medium text-justify row-span-5'>{array_textos["texto_shopguns"]}</span>
 
@@ -691,11 +691,15 @@ useEffect(() => {
 
       <div className='w-full flex justify-center items-center'>  {/*NÃO FINALIZADO, necessario fazer as variáveis e o processo de envio */}
         <div className='w-6/12 grid grid-cols-1 mt-20 gap-5'>
-            <Input placeholder={array_textos["nome_placeholder"]} icon={<User size={32} />}/>
-            <Input placeholder={array_textos["email_placeholder"]} icon={<EnvelopeSimple size={32} />}/>
-            <Input placeholder={array_textos["mensagem_placeholder"]} icon={<TextAlignJustify size={32} />}/>
+            <Input value={send_nomecompleto} Evento={setSendNomeCompleto} placeholder={array_textos["nome_placeholder"]} icon={<User size={32}/>}/>
+            <Input value={send_email} Evento={setSendEmail} placeholder={array_textos["email_placeholder"]} icon={<EnvelopeSimple size={32} />}/>
+            <Input value={send_texto} Evento={setSendTexto} placeholder={array_textos["mensagem_placeholder"]} icon={<TextAlignJustify size={32} />}/>
 
-            <button className='flex items-center gap-3 border-2 py-2 border-defyellow text-defyellow justify-center bg-black w-2/12 hover:bg-defyellow hover:text-black duration-700'><PaperPlaneTilt size={32}/>{array_textos["bottao_enviar"]}</button>
+            <a href={"mailto:andreimattos06@gmail.com?subject=Portfolio - Andrei dos Santos Mattos - Contato&body=" + send_nomecompleto + " - " + send_email + " - " + send_texto}>
+            <button className='flex items-center gap-3 border-2 py-2 border-defyellow text-defyellow justify-center bg-black w-2/12 hover:bg-defyellow hover:text-black duration-700'><PaperPlaneTilt size={32}/>
+            {array_textos["bottao_enviar"]}
+            </button>
+            </a>
         </div>
       </div>
 
