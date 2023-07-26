@@ -265,10 +265,10 @@ function deepCopy(obj: any): any {
 useEffect(() => {
   setArrayTextos(deepCopy(texto_portugues))
 
-  fetch('http://ip-api.com/json/')
+  fetch('https://ipapi.co/json')
   .then(response => response.json())
   .then(data => {
-    const client_country = data.countryCode;
+    const client_country = data.country
     console.log(client_country)
     if(client_country != "BR"){
       setArrayTextos(deepCopy(texto_ingles))
