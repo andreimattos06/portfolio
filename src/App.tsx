@@ -52,6 +52,7 @@ function App() {
   const [send_email, setSendEmail] = useState("")
   const [send_texto, setSendTexto] = useState("")
 
+  console.log(send_nomecompleto, send_email, send_texto)
 
   const [array_textos, setArrayTextos] = useState<textos>({})
   const texto_ingles: textos = {}
@@ -89,6 +90,12 @@ function App() {
 
   texto_portugues["texto_kfbeauty"] = "Página Web simples apenas para divulgação dos procedimentos estéticos realizados por uma esteticista, página apenas com informações de cada procedimento, possibilidade de agendar atendimentos através de site com redirecionamento para o whatsapp."
   texto_ingles["texto_kfbeauty"] = "Simple web page only for disclosing the aesthetic procedures realized by a beautician, page only with information of each procedure, possibility to schedule appointments through the website with redirect to whatsapp."
+
+  texto_portugues["titulo_reservaveiculo"] = "Reserva de Veiculo"
+  texto_ingles["titulo_reservaveiculo"] = "Vehicle Reservation"
+  
+  texto_portugues["texto_reservaveiculo"] = "Sistema web desenvolvido para facilitar o processo de reserva de veículo em uma determinada empresa, um administrador deve cadastrar os veículos e os usuários e com isso o usuário poderia acessar o calendário escolher a data e hora de partida e retorno que o sistema mostraria apenas os veículos disponíveis. Logo ele poderia fazer a reserva e isso garantiria que nenhum outro usuário reservasse o mesmo veículo, causando algum conflito de agenda."
+  texto_ingles["texto_reservaveiculo"] = "Web system developed to facilitate the vehicle reservation process in a given company, an administrator must register the vehicles and users and with this the user could access the calendar choose the date and time of departure and return, and the system would only show the vehicles available. So he could make the reservation and this would ensure that no other user reserved the same vehicle, causing some schedule conflict."
 
   texto_portugues["titulo_fpe1"] = "For"
   texto_ingles["titulo_fpe1"] = "For"
@@ -139,8 +146,8 @@ function App() {
   texto_portugues["nome_placeholder"] = "Nome Completo"
   texto_ingles["nome_placeholder"] = "Full Name"
 
-  texto_portugues["email_placeholder"] = "E-mail"
-  texto_ingles["email_placeholder"] = "E-mail"
+  texto_portugues["email_placeholder"] = "Assunto"
+  texto_ingles["email_placeholder"] = "Subject"
 
   texto_portugues["mensagem_placeholder"] = "Mensagem..."
   texto_ingles["mensagem_placeholder"] = "Message..."
@@ -269,7 +276,6 @@ function App() {
       .then(response => response.json())
       .then(data => {
         const client_country = data.country
-        console.log(client_country)
         if (client_country != "BR") {
           setArrayTextos(deepCopy(texto_ingles))
           setLinguagem(false)
@@ -447,7 +453,7 @@ function App() {
         </div>
       </div>
 
-      <div className='w-full flex px-16 mb-96'>
+      <div className='w-full flex px-16'>
 
         <div className='bg-black flex rounded-xl border-[1px] border-gray-600 -mt-40 drop-shadow-2xl'>
 
@@ -486,10 +492,9 @@ function App() {
                 <span className='text-lg font-medium'>Git - Backend: </span>
                 <GithubLogo size={23} />
               </a>
-
             </div>
 
-
+            {/*
             <Dialog.Root>
               <div className='h-full flex justify-center items-end row-span-3'>
                 <Dialog.Trigger>
@@ -502,7 +507,7 @@ function App() {
                 <Dialog.Overlay className='bg-black fixed inset-0 opacity-40' />
                 <Dialog.Content className='fixed w-8/12 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center'>
                   <div className='bg-black w-full flex border-2 border-defyellow rounded-md justify-center items-center'>
-                    {/**<img src="teste.gif" className='w-full'/> **/}
+                    {//<img src="teste.gif" className='w-full'/> }
                     <iframe src="https://www.youtube.com/embed/aFpdO-0vrzs?autoplay=1&mute=1" width="1280" height="720" allow="autoplay">
 
                     </iframe>
@@ -510,6 +515,8 @@ function App() {
                 </Dialog.Content>
               </Dialog.Portal>
             </Dialog.Root>
+            
+          */}
 
           </div>
 
@@ -548,12 +555,13 @@ function App() {
             </div>
 
 
-
+            {/*
             <div className='h-full flex justify-center items-end row-span-3'>
               <button className='hover:bg-white rounded-2xl p-4 text-black bg-defyellow hover:text-defyellow transition-all duration-700'>
                 <MagnifyingGlassPlus size={40} className='' />
               </button>
             </div>
+            */}
 
           </div>
 
@@ -578,17 +586,70 @@ function App() {
 
             </div>
 
+            {/* 
             <div className='h-full flex justify-center items-end row-span-6'>
               <button className='hover:bg-white rounded-2xl p-4 text-black bg-defyellow hover:text-defyellow transition-all duration-700'>
                 <MagnifyingGlassPlus size={40} className='' />
               </button>
             </div>
-
+            */}
 
           </div>
+        </div>
+      </div>
+
+      <div className='w-full flex px-16 mb-96 mt-10 justify-center'>
+        <div className='border-[1px] rounded-lg border-gray-700 px-20 grid grid-rows-{15} place-items-center w-2/6 h-full gap-7 py-14'>
+
+          <span className='text-3xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_reservaveiculo"]}</span>
+
+          <span className='text-xl font-medium text-justify row-span-5'>{array_textos["texto_reservaveiculo"]}</span>
+
+          <div className='place-self-start flex flex-row justify-center'>
+            <span className='text-xl font-semibold text-defyellow'>Front End: </span>
+            <Triangle size={24} className='text-white' />
+            <span className='text-xl font-medium'> Next.js</span>
+          </div>
+
+          <div className='place-self-start flex flex-row justify-center'>
+            <span className='text-xl font-semibold text-defyellow'>Back End: </span>
+            <Hexagon size={24} className='text-green-600' />
+            <span className='text-xl font-medium'> Node</span>
+          </div>
+
+          <div className='place-self-start flex flex-row justify-center text-lg font-medium row-span-2'>
+            <ul className='list-disc list-inside'>
+              <li>Tailwind</li>
+              <li>Prisma</li>
+              <li>Next Auth</li>
+              <li>JWT Token and Refresh Token</li>
+            </ul>
+          </div>
+
+          <div className='flex flex-col place-self-start justify-start items-start'>
+            <a className="hover:text-defyellow flex flex-row justify-between gap-3" target="_blank" href='https://github.com/andreimattos06/Reserva_de_Veiculo'>
+              <span className='text-lg font-medium'>Git - Frontend: </span>
+              <GithubLogo size={23} />
+            </a>
+            <a className="hover:text-defyellow flex flex-row justify-between shrink-0 w-full" target="_blank" href='https://github.com/andreimattos06/Reserva_veiculo_server'>
+              <span className='text-lg font-medium'>Git - Backend: </span>
+              <GithubLogo size={23} />
+            </a>
+          </div>
+
+
+
+          <div className='h-full flex justify-center items-end row-span-3'>
+            <a className='hover:bg-white rounded-2xl p-4 text-black bg-defyellow hover:text-defyellow transition-all duration-700' target='_blank' href='https://reserva-de-veiculo.vercel.app/'>
+              <MagnifyingGlassPlus size={40} className='' />
+            </a>
+          </div>
+
 
         </div>
       </div>
+
+
 
       <div>
         <div className='w-full flex-row flex text-defyellow text-5xl tracking-tighter font-bold justify-center items-center gap-5'>
@@ -701,7 +762,7 @@ function App() {
           <Input value={send_email} Evento={setSendEmail} placeholder={array_textos["email_placeholder"]} icon={<EnvelopeSimple size={32} />} />
           <Input value={send_texto} Evento={setSendTexto} placeholder={array_textos["mensagem_placeholder"]} icon={<TextAlignJustify size={32} />} />
 
-          <a href={"mailto:andreimattos06@gmail.com?subject=Portfolio - Andrei dos Santos Mattos - Contato&body=" + send_nomecompleto + " - " + send_email + " - " + send_texto}>
+          <a href={"mailto:andreimattos06@gmail.com?subject=" + send_nomecompleto + " - " + send_email +  "&body=" + send_texto}>
             <button className='flex items-center gap-3 border-2 py-2 border-defyellow text-defyellow justify-center bg-black w-2/12 hover:bg-defyellow hover:text-black duration-700'><PaperPlaneTilt size={32} />
               {array_textos["bottao_enviar"]}
             </button>
