@@ -5,7 +5,7 @@ import './components/Header'
 import { Header } from './components/Header'
 import { Atom, DotOutline, EnvelopeSimple, Fire, GithubLogo, InstagramLogo, LinkedinLogo, FileTs, Triangle, Hexagon, Equals, Seal, FileJs, MagnifyingGlassPlus, TagSimple, GraduationCap, RocketLaunch, Wrench, Certificate, User, TextAlignJustify, PaperPlaneTilt, Broom } from '@phosphor-icons/react'
 import { Input } from './components/Input'
-import * as Dialog from '@radix-ui/react-dialog'
+//import * as Dialog from '@radix-ui/react-dialog'
 
 
 interface ferramentasETecnologias {
@@ -52,7 +52,6 @@ function App() {
   const [send_email, setSendEmail] = useState("")
   const [send_texto, setSendTexto] = useState("")
 
-  console.log(send_nomecompleto, send_email, send_texto)
 
   const [array_textos, setArrayTextos] = useState<textos>({})
   const texto_ingles: textos = {}
@@ -372,15 +371,15 @@ function App() {
 
     <>
 
-      <div className="z-10 w-full h-screen opacity-70 bg-neutral-900 absolute grid grid-cols-2 transform-gpu will-change-transform" id="blur_bg">
+      <div className="z-10 w-screen h-screen opacity-70 bg-neutral-900 absolute grid grid-cols-2 transform-gpu will-change-transform" id="blur_bg">
       </div>
 
-      <div className="absolute grid grid-cols-2 w-full h-screen z-20 transform-gpu will-change-transform" id="div_bg_mae">
+      <div className="absolute grid grid-cols-2 w-screen h-screen z-20 transform-gpu will-change-transform" id="div_bg_mae">
         <div className="bg-black h-screen" id="esquerda"></div>
         <div className="bg-black h-screen" id="direita"></div>
       </div>
 
-      <div className="absolute w-full h-full z-30 flex items-center justify-center blur-[1px] transform-gpu" id="logo">
+      <div className="absolute w-screen h-screen z-30 flex items-center justify-center blur-[1px] transform-gpu" id="logo">
         <div className='w-1/5 rounded-full animate-pulse'>
           <img src="logo2.svg"></img>
         </div>
@@ -391,7 +390,7 @@ function App() {
 
       <div className='bg-black h-screen mb-[-64px]'>
         <div className='flex flex-col items-center justify-center mt-20 gap-10'>
-          <div className='text-defyellow font-bold text-7xl tracking-tighter'>
+          <div className='text-defyellow font-bold xl:text-7xl lg:text-5xl tracking-tighter'>
             <span>{array_textos!['titulo_inicial']}</span>
           </div>
 
@@ -400,13 +399,13 @@ function App() {
           </div>
 
           <div className='flex flex-col items-center justify-center w-2/4 font-medium gap-5'>
-            <span className=' border-l-defyellow border-l-2 pl-3 text-justify whitespace-pre-line'>{array_textos!['texto_inicial']}
+            <span className='border-l-defyellow border-l-2 pl-3 text-justify whitespace-pre-line xl:text-base lg:text-sm'>{array_textos!['texto_inicial']}
             </span>
-            <div className='flex justify-center items-center gap-7'>
-              <a className="hover:text-defyellow" target="_blank" href='https://www.linkedin.com/in/andrei-mattos-8aa873163/'> <LinkedinLogo size={32} /> </a>
-              <a className="hover:text-defyellow" target="_blank" href='https://www.instagram.com/mattosandrei/'> <InstagramLogo size={32} /> </a>
-              <a className="hover:text-defyellow" target="_blank" href='https://github.com/andreimattos06'> <GithubLogo size={32} /> </a>
-              <a className="hover:text-defyellow" target="_blank" href='mailto:andreimattos06@gmail.com?subject=E mail de Andrei Mattos - Portfoliot'> <EnvelopeSimple size={32} /> </a>
+            <div className='flex justify-center items-center gap-7 xl:text-3xl lg:text-2xl'>
+              <a className="hover:text-defyellow" target="_blank" href='https://www.linkedin.com/in/andrei-mattos-8aa873163/'> <LinkedinLogo /> </a>
+              <a className="hover:text-defyellow" target="_blank" href='https://www.instagram.com/mattosandrei/'> <InstagramLogo /> </a>
+              <a className="hover:text-defyellow" target="_blank" href='https://github.com/andreimattos06'> <GithubLogo /> </a>
+              <a className="hover:text-defyellow" target="_blank" href='mailto:andreimattos06@gmail.com?subject=E mail de Andrei Mattos - Portfoliot'> <EnvelopeSimple /> </a>
             </div>
           </div>
 
@@ -418,13 +417,13 @@ function App() {
 
         <div className='flex flex-col justify-center items-start w-4/6'>
 
-          <span className='text-defyellow text-5xl font-bold tracking-tighter pb-12'>{array_textos!['titulo_tecnologia']}</span>
+          <span className='text-defyellow xl:text-5xl lg:text-3xl font-bold tracking-tighter pb-12'>{array_textos!['titulo_tecnologia']}</span>
 
           <div className='border-l-[1px] border-defyellow pl-3' id="tecnologias">
 
             {tecnologias.map((cada, index) => {
               return (
-                <div className='flex flex-row justify-start items-center w-full text-white text-xl font-medium gap-3 pb-3 opacity-0' id={'tecnologia' + index.toString()}
+                <div className='flex flex-row justify-start items-center w-full text-white xl:text-xl lg:text-base font-medium gap-3 pb-3 opacity-0' id={'tecnologia' + index.toString()}
                   /* @ts-ignore */
                   onLoad={div_animadas.push('tecnologia' + index.toString())}>
                   {cada.marcacao}
@@ -447,35 +446,35 @@ function App() {
       </div>
 
       <div className='bg-defyellow w-full flex justify-center'>
-        <div className='flex flex-col items-center justify-center text-black py-64 w-6/12 gap-10 text-justify'>
-          <span className='text-5xl font-bold'>{array_textos["titulo_projetos"]}</span>
-          <span>{array_textos["texto_projetos"]}</span>
+        <div className='flex flex-col items-center justify-center text-black xl:py-64 lg:pb-48 lg:pt-24 w-6/12 gap-10 text-justify'>
+          <span className='xl:text-5xl lg:text-3xl font-bold'>{array_textos["titulo_projetos"]}</span>
+          <span className='xl:text-xl lg:text-sm'>{array_textos["texto_projetos"]}</span>
         </div>
       </div>
 
       <div className='w-full flex px-16'>
 
-        <div className='bg-black flex rounded-xl border-[1px] border-gray-600 -mt-40 drop-shadow-2xl'>
+        <div className='bg-black flex rounded-xl border-[1px] border-gray-600 -mt-40 drop-shadow-2xl flex-wrap '>
 
           <div className='border-r-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center w-2/6 h-full gap-7'>
 
-            <span className='text-3xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_lfreceitas"]}</span>
+            <span className='xl:text-3xl lg:text-xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_lfreceitas"]}</span>
 
-            <span className='text-xl font-medium text-justify pt-5 row-span-5'>{array_textos["texto_lfreceitas"]}</span>
+            <span className='xl:text-xl lg:text-base font-medium text-justify pt-5 row-span-5'>{array_textos["texto_lfreceitas"]}</span>
 
             <div className='place-self-start flex flex-row justify-center'>
-              <span className='text-xl font-semibold text-defyellow'>Front End: </span>
+              <span className='xl:text-xl lg:text-base font-semibold text-defyellow'>Front End: </span>
               <Triangle size={24} className='text-white' />
-              <span className='text-xl font-medium'> Next.js</span>
+              <span className='xl:text-xl lg:text-base font-medium'> Next.js</span>
             </div>
 
             <div className='place-self-start flex flex-row justify-center'>
-              <span className='text-xl font-semibold text-defyellow'>Back End: </span>
+              <span className='xl:text-xl lg:text-base font-semibold text-defyellow'>Back End: </span>
               <Hexagon size={24} className='text-green-600' />
-              <span className='text-xl font-medium'> Node</span>
+              <span className='xl:text-xl lg:text-base font-medium'> Node</span>
             </div>
 
-            <div className='place-self-start flex flex-row justify-center text-lg font-medium row-span-2'>
+            <div className='place-self-start flex flex-row justify-center xl:text-lg lg:text-sm font-medium row-span-2'>
               <ul className='list-disc list-inside'>
                 <li>Tailwind</li>
                 <li>Typescript</li>
@@ -485,11 +484,11 @@ function App() {
 
             <div className='flex flex-col place-self-start justify-start items-start'>
               <a className="hover:text-defyellow flex flex-row justify-between gap-3" target="_blank" href='https://github.com/andreimattos06/LF-Receitas'>
-                <span className='text-lg font-medium'>Git - Frontend: </span>
+                <span className='xl:text-lg lg:text-sm font-medium'>Git - Frontend: </span>
                 <GithubLogo size={23} />
               </a>
               <a className="hover:text-defyellow flex flex-row justify-between shrink-0 w-full" target="_blank" href='https://github.com/andreimattos06/lfreceitasback'>
-                <span className='text-lg font-medium'>Git - Backend: </span>
+                <span className='xl:text-lg lg:text-sm font-medium'>Git - Backend: </span>
                 <GithubLogo size={23} />
               </a>
             </div>
@@ -522,23 +521,23 @@ function App() {
 
           <div className='border-r-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center w-2/6 h-full gap-7'>
 
-            <span className='text-3xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_shopguns"]}</span>
+            <span className='xl:text-3xl lg:text-xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_shopguns"]}</span>
 
-            <span className='text-xl font-medium text-justify row-span-5'>{array_textos["texto_shopguns"]}</span>
+            <span className='xl:text-xl lg:text-base font-medium text-justify row-span-5'>{array_textos["texto_shopguns"]}</span>
 
             <div className='place-self-start flex flex-row justify-center'>
-              <span className='text-xl font-semibold text-defyellow'>Front End: </span>
+              <span className='xl:text-xl lg:text-base font-semibold text-defyellow'>Front End: </span>
               <Atom size={24} className='text-blue-400' />
-              <span className='text-xl font-medium'> React</span>
+              <span className='xl:text-xl lg:text-base font-medium'> React</span>
             </div>
 
             <div className='place-self-start flex flex-row justify-center'>
-              <span className='text-xl font-semibold text-defyellow'>Back End: </span>
+              <span className='xl:text-xl lg:text-base font-semibold text-defyellow'>Back End: </span>
               <Hexagon size={24} className='text-green-600' />
-              <span className='text-xl font-medium'> Node</span>
+              <span className='xl:text-xl lg:text-base font-medium'> Node</span>
             </div>
 
-            <div className='place-self-start flex flex-row justify-center text-lg font-medium row-span-2'>
+            <div className='place-self-start flex flex-row justify-center xl:text-lg lg:text-sm font-medium row-span-2'>
               <ul className='list-disc list-inside'>
                 <li>Tailwind</li>
                 <li>Typescript</li>
@@ -548,7 +547,7 @@ function App() {
 
             <div className='flex justify-self-start justify-center hover:text-defyellow'>
               <a className="hover:text-defyellow flex flex-row justify-between gap-3" target="_blank" href='https://github.com/andreimattos06/ShopGuns'>
-                <span className='text-lg font-medium'>Git - Frontend/Backend: </span>
+                <span className='xl:text-lg lg:text-sm font-medium'>Git - Frontend/Backend: </span>
                 <GithubLogo size={23} />
               </a>
 
@@ -567,20 +566,20 @@ function App() {
 
           <div className='px-20 py-14 grid grid-rows-{15} place-items-center w-2/6 h-full gap-7'>
 
-            <span className='text-3xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_kfbeauty"]}</span>
+            <span className='xl:text-3xl lg:text-xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_kfbeauty"]}</span>
 
-            <span className='text-xl font-medium text-justify row-span-5'>{array_textos["texto_kfbeauty"]}</span>
+            <span className='xl:text-xl lg:text-base font-medium text-justify row-span-5'>{array_textos["texto_kfbeauty"]}</span>
 
             <div className='place-self-start flex flex-row justify-center'>
-              <span className='text-xl font-semibold text-defyellow'>Front End: </span>
+              <span className='xl:text-xl lg:text-base font-semibold text-defyellow'>Front End: </span>
               <TagSimple size={24} className='text-blue-400 rotate-90' />
-              <span className='text-xl font-medium'>HTML e CSS</span>
+              <span className='xl:text-xl lg:text-base font-medium'>HTML e CSS</span>
             </div>
 
 
             <div className='flex justify-self-start justify-center hover:text-defyellow'>
               <a className="hover:text-defyellow flex flex-row justify-center gap-3" target="_blank" href='https://github.com/andreimattos06/KFBeauty'>
-                <span className='text-lg font-medium'>Git: </span>
+                <span className='xl:text-lg lg:text-sm font-medium'>Git: </span>
                 <GithubLogo size={23} />
               </a>
 
@@ -601,23 +600,23 @@ function App() {
       <div className='w-full flex px-16 mb-96 mt-10 justify-center'>
         <div className='border-[1px] rounded-lg border-gray-700 px-20 grid grid-rows-{15} place-items-center w-2/6 h-full gap-7 py-14'>
 
-          <span className='text-3xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_reservaveiculo"]}</span>
+          <span className='xl:text-3xl lg:text-xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_reservaveiculo"]}</span>
 
-          <span className='text-xl font-medium text-justify row-span-5'>{array_textos["texto_reservaveiculo"]}</span>
+          <span className='xl:text-xl lg:text-base font-medium text-justify row-span-5'>{array_textos["texto_reservaveiculo"]}</span>
 
           <div className='place-self-start flex flex-row justify-center'>
-            <span className='text-xl font-semibold text-defyellow'>Front End: </span>
+            <span className='xl:text-xl lg:text-base font-semibold text-defyellow'>Front End: </span>
             <Triangle size={24} className='text-white' />
-            <span className='text-xl font-medium'> Next.js</span>
+            <span className='xl:text-xl lg:text-base font-medium'> Next.js</span>
           </div>
 
           <div className='place-self-start flex flex-row justify-center'>
-            <span className='text-xl font-semibold text-defyellow'>Back End: </span>
+            <span className='xl:text-xl lg:text-base font-semibold text-defyellow'>Back End: </span>
             <Hexagon size={24} className='text-green-600' />
-            <span className='text-xl font-medium'> Node</span>
+            <span className='xl:text-xl lg:text-base font-medium'> Node</span>
           </div>
 
-          <div className='place-self-start flex flex-row justify-center text-lg font-medium row-span-2'>
+          <div className='place-self-start flex flex-row justify-center xl:text-lg lg:text-sm font-medium row-span-2'>
             <ul className='list-disc list-inside'>
               <li>Tailwind</li>
               <li>Prisma</li>
@@ -628,20 +627,20 @@ function App() {
 
           <div className='flex flex-col place-self-start justify-start items-start'>
             <a className="hover:text-defyellow flex flex-row justify-between gap-3" target="_blank" href='https://github.com/andreimattos06/Reserva_de_Veiculo'>
-              <span className='text-lg font-medium'>Git - Frontend: </span>
+              <span className='xl:text-lg lg:text-sm font-medium'>Git - Frontend: </span>
               <GithubLogo size={23} />
             </a>
             <a className="hover:text-defyellow flex flex-row justify-between shrink-0 w-full" target="_blank" href='https://github.com/andreimattos06/Reserva_veiculo_server'>
-              <span className='text-lg font-medium'>Git - Backend: </span>
+              <span className='xl:text-lg lg:text-sm font-medium'>Git - Backend: </span>
               <GithubLogo size={23} />
             </a>
           </div>
 
 
 
-          <div className='h-full flex justify-center items-end row-span-3'>
+          <div className='flex justify-center items-end row-span-3'>
             <a className='hover:bg-white rounded-2xl p-4 text-black bg-defyellow hover:text-defyellow transition-all duration-700' target='_blank' href='https://reserva-de-veiculo.vercel.app/'>
-              <MagnifyingGlassPlus size={40} className='' />
+              <MagnifyingGlassPlus className='xl:text-4xl lg:text-2xl'/>
             </a>
           </div>
 
@@ -652,7 +651,7 @@ function App() {
 
 
       <div>
-        <div className='w-full flex-row flex text-defyellow text-5xl tracking-tighter font-bold justify-center items-center gap-5'>
+        <div className='w-full flex-row flex text-defyellow xl:text-5xl lg:text-3xl tracking-tighter font-bold justify-center items-center gap-5'>
           <hr className='grow border-defyellow border-2' />
           <div>
             {/* @ts-ignore */}
@@ -678,8 +677,8 @@ function App() {
 
           <div className='col-span-4 bg-defyellow w-full rounded-r-md -left-96 relative' id="esquerda1">
             <div className='flex items-center justify-start py-5 px-5 gap-5'>
-              <GraduationCap size={80} className='text-black' />
-              <div className='flex flex-col justify-center items-center text-xl text-black font-semibold w-full'>
+              <GraduationCap className='lg:text-7xl text-black' />
+              <div className='flex flex-col justify-center items-center xl:text-xl lg:text-base text-black font-semibold w-full'>
                 <span>{array_textos["tipo_fpe1"]}</span>
                 <span>{array_textos["nome_fpe1"]}</span>
                 <span>{array_textos["lugar_fpe1"]}</span>
@@ -687,7 +686,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className='col-span-1 text-4xl font-bold'>
+          <div className='col-span-1 xl:text-4xl lg:text-2xl font-bold'>
             2019
           </div>
           <div className='col-span-4'>
@@ -699,8 +698,8 @@ function App() {
 
           <div className='col-span-4 bg-defyellow w-full rounded-r-md -right-96 relative' id="esquerda2">
             <div className='flex items-center justify-start py-5 px-5 gap-5'>
-              <Certificate size={80} className='text-black' />
-              <div className='flex flex-col justify-center items-center text-xl text-black font-semibold w-full'>
+              <Certificate className='lg:text-7xl text-black' />
+              <div className='flex flex-col justify-center items-center xl:text-xl lg:text-base text-black font-semibold w-full'>
                 <span>{array_textos["tipo_fpe2"]}</span>
                 <span>{array_textos["nome_fpe2"]}</span>
                 <span>{array_textos["lugar_fpe2"]}</span>
@@ -709,18 +708,18 @@ function App() {
             </div>
           </div>
           {/* @ts-ignore */}
-          <div className='col-span-1 text-4xl font-bold'>
+          <div className='col-span-1 xl:text-4xl lg:text-2xl font-bold'>
             2022
           </div>
           <div className='col-span-4 bg-defyellow w-full rounded-l-md -right-96 relative' id="direita1">
             <div className='flex items-center justify-start py-5 px-5 gap-5'>
 
-              <div className='flex flex-col justify-center items-center text-xl text-black font-semibold w-full'>
+              <div className='flex flex-col justify-center items-center xl:text-xl lg:text-base text-black font-semibold w-full'>
                 <span>{array_textos["tipo_fpe3"]}</span>
                 <span>{array_textos["nome_fpe3"]}</span>
                 <span>{array_textos["lugar_fpe3"]}</span>
               </div>
-              <RocketLaunch size={80} className='text-black' />
+              <RocketLaunch className='lg:text-7xl text-black' />
             </div>
           </div>
           {/* @ts-ignore */}
@@ -730,8 +729,8 @@ function App() {
 
           <div className='col-span-4 bg-defyellow w-full rounded-r-md -left-96 relative' id="esquerda3">
             <div className='flex items-center justify-start py-5 px-5 gap-5'>
-              <Wrench size={80} className='text-black' />
-              <div className='flex flex-col justify-center items-center text-xl text-black font-semibold w-full'>
+              <Wrench className='lg:text-7xl text-black' />
+              <div className='flex flex-col justify-center items-center xl:text-xl lg:text-base text-black font-semibold w-full'>
                 <span>{array_textos["tipo_fpe4"]}</span>
                 <span>{array_textos["nome_fpe4"]}</span>
                 <span>{array_textos["lugar_fpe4"]}</span>
@@ -739,7 +738,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className='col-span-1 text-4xl font-bold'>
+          <div className='col-span-1 xl:text-4xl lg:text-2xl font-bold'>
             2023
           </div>
           <div className='col-span-4'>
@@ -750,20 +749,20 @@ function App() {
         </div>
       </div>
 
-      <div className='w-full flex-row flex text-defyellow text-5xl tracking-tighter font-bold items-center gap-5 mt-48'>
+      <div className='w-full flex-row flex text-defyellow xl:text-5xl lg:text-3xl tracking-tighter font-bold items-center gap-5 mt-48'>
         <hr className='border-defyellow border-2 w-1/12' />
-        <span className='text-defyellow text-5xl'>{array_textos["titulo_contato"]}</span>
+        <span className='text-defyellow xl:text-5xl lg:text-3xl'>{array_textos["titulo_contato"]}</span>
         <hr className='grow border-defyellow border-2' />
       </div>
 
-      <div className='w-full flex justify-center items-center'>  {/*NÃO FINALIZADO, necessario fazer as variáveis e o processo de envio */}
+      <div className='w-full flex justify-center items-center'>
         <div className='w-6/12 grid grid-cols-1 mt-20 gap-5'>
           <Input value={send_nomecompleto} Evento={setSendNomeCompleto} placeholder={array_textos["nome_placeholder"]} icon={<User size={32} />} />
           <Input value={send_email} Evento={setSendEmail} placeholder={array_textos["email_placeholder"]} icon={<EnvelopeSimple size={32} />} />
           <Input value={send_texto} Evento={setSendTexto} placeholder={array_textos["mensagem_placeholder"]} icon={<TextAlignJustify size={32} />} />
 
           <a href={"mailto:andreimattos06@gmail.com?subject=" + send_nomecompleto + " - " + send_email +  "&body=" + send_texto}>
-            <button className='flex items-center gap-3 border-2 py-2 border-defyellow text-defyellow justify-center bg-black w-2/12 hover:bg-defyellow hover:text-black duration-700'><PaperPlaneTilt size={32} />
+            <button className='lg:text-base xl:text-lg flex items-center gap-3 border-2 py-2 px-1 border-defyellow text-defyellow justify-center bg-black w-2/12 hover:bg-defyellow hover:text-black duration-700'><PaperPlaneTilt className='lg:text-lg xl:text-2xl'/>
               {array_textos["bottao_enviar"]}
             </button>
           </a>

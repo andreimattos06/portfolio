@@ -129,8 +129,8 @@ function clickMenu(){
                     <div className="flex justify-center items-center">
 
                         <div className="fixed">
-                            <button onClick={clickMenu} id="menuButton" className="p-3 transition ease-in duration-200 hover:bg-defyellow w-full rounded-full border-2 border-defyellow">
-                                {isMenuOpen ?  <X size={32}/> : <List size={32}/>}
+                            <button onClick={clickMenu} id="menuButton" className="p-3 xl:text-3xl lg:text-xl transition ease-in duration-200 hover:bg-defyellow w-full rounded-full border-2 border-defyellow">
+                                {isMenuOpen ?  <X/> : <List/>}
                             </button>
                             
                         </div>
@@ -140,16 +140,16 @@ function clickMenu(){
 
                 <div id="opcoes_menu" className="opacity-0">
                     {opcoesMenu ? 
-                        <div className="grid grid-cols-1 pt-32 text-6xl gap-10 font-semibold content-center place-items-center" >
+                        <div className="grid grid-cols-1 pt-32 xl:text-6xl lg:text-4xl gap-10 font-semibold content-center place-items-center" >
 
-                                <span className="text-defyellow">Home</span>
-                                <span>Sobre</span>
-                                <span>Contato</span>
+                                <span className="text-defyellow">Under construction</span>
+                                <span>Under construction</span>
+                                <span>Under construction</span>
                                 <div className="flex flex-row w-full gap-3 items-center justify-center">
-                                    <button className={clsx('w-[3.24rem] hover:opacity-100 duration-700', {'opacity-40' : !props.lingua})} onClick={() => props.updateLinguagem(true)}>
+                                    <button className={clsx('xl:w-[3.24rem] lg:w-[2.5rem] hover:opacity-100 duration-700', {'opacity-40' : !props.lingua})} onClick={() => props.updateLinguagem(true)}>
                                         <img src="brasil.svg" />
                                     </button>
-                                    <button className={clsx('w-14 hover:opacity-100 duration-700', {'opacity-40' : props.lingua})} onClick={() => props.updateLinguagem(false)}>
+                                    <button className={clsx('xl:w-14 lg:w-[2.5rem] hover:opacity-100 duration-700', {'opacity-40' : props.lingua})} onClick={() => props.updateLinguagem(false)}>
                                         <img src="english.svg" />
                                     </button>
                                     
