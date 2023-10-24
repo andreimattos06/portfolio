@@ -97,9 +97,9 @@ function App() {
   texto_ingles["texto_reservaveiculo"] = "Web system developed to facilitate the vehicle reservation process in a given company, an administrator must register the vehicles and users and with this the user could access the calendar choose the date and time of departure and return, and the system would only show the vehicles available. So he could make the reservation and this would ensure that no other user reserved the same vehicle, causing some schedule conflict."
 
   texto_portugues["titulo_fpe1"] = "For"
-  texto_ingles["titulo_fpe1"] = "For"
+  texto_ingles["titulo_fpe1"] = "Trai"
   texto_portugues["titulo_fpe2"] = "mações"
-  texto_ingles["titulo_fpe2"] = "mations"
+  texto_ingles["titulo_fpe2"] = "nings"
   texto_portugues["titulo_fpe3"] = "e"
   texto_ingles["titulo_fpe3"] = "and"
   texto_portugues["titulo_fpe4"] = "Partici"
