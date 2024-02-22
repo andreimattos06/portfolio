@@ -3,8 +3,9 @@ import { useEffect } from 'react'
 import './App.css'
 import './components/Header'
 import { Header } from './components/Header'
-import { Atom, DotOutline, EnvelopeSimple, Fire, GithubLogo, InstagramLogo, LinkedinLogo, FileTs, Triangle, Hexagon, Equals, Seal, FileJs, MagnifyingGlassPlus, TagSimple, GraduationCap, RocketLaunch, Wrench, Certificate, User, TextAlignJustify, PaperPlaneTilt, Broom } from '@phosphor-icons/react'
+import { Atom, DotOutline, EnvelopeSimple, Fire, GithubLogo, InstagramLogo, LinkedinLogo, FileTs, Triangle, Hexagon, Equals, Seal, FileJs, MagnifyingGlassPlus, TagSimple, GraduationCap, RocketLaunch, Wrench, Certificate, User, TextAlignJustify, PaperPlaneTilt, Broom, Coffee } from '@phosphor-icons/react'
 import { Input } from './components/Input'
+import { deepCopy } from './utils/DeepCopy'
 //import * as Dialog from '@radix-ui/react-dialog'
 
 
@@ -22,6 +23,9 @@ interface textos {
 function App() {
 
   const tecnologias: ferramentasETecnologias[] = [
+    {
+      nome: "Java", marcacao: <DotOutline size={28} />, icone_tecnologia: <Coffee size={28} className='text-defyellow' />, icone_pericia: <Fire size={28} className='bg-red-600 rounded-full p-1' />
+    },
     {
       nome: "React", marcacao: <DotOutline size={28} />, icone_tecnologia: <Atom size={28} className='text-defyellow' />, icone_pericia: <Fire size={28} className='bg-red-600 rounded-full p-1' />
     },
@@ -60,8 +64,8 @@ function App() {
   texto_portugues["titulo_inicial"] = "Bem-Vindo"
   texto_ingles["titulo_inicial"] = "Welcome"
 
-  texto_portugues["texto_inicial"] = "👋 Olá 👋, meu nome é Andrei Mattos, tenho 28 anos e sou um entusiasta da tecnologia 💻😎❗\n\n🤵🏼 Atuo como desenvolvedor web 🌐 com foco no frontend mas também possuo experiência em desenvolvimento backend ❗\n\n🏆 Vamos construir juntos o futuro da web ❗"
-  texto_ingles["texto_inicial"] = "👋 Hello 👋, my name is Andrei Mattos, im 28 years old and a technology enthusiast 💻😎❗\n\n🤵🏼 I work as a web developer 🌐 focusing on the frontend but i also have experience in backend development ❗\n\n🏆 Let's build the future of web together ❗"
+  texto_portugues["texto_inicial"] = "👋 Olá 👋, meu nome é Andrei Mattos, tenho 28 anos e sou um entusiasta da tecnologia 💻😎❗\n\n🤵🏼 Atuo como desenvolvedor web Fullstack 🌐 com foco no backend mas também possuo experiência em desenvolvimento frontend ❗\n\n🏆 Vamos construir juntos o futuro da web ❗"
+  texto_ingles["texto_inicial"] = "👋 Hello 👋, my name is Andrei Mattos, im 28 years old and a technology enthusiast 💻😎❗\n\n🤵🏼 I work as a Fullstack web developer 🌐 focusing on the backend but i also have experience in frontend development ❗\n\n🏆 Let's build the future of web together ❗"
 
   texto_portugues["titulo_tecnologia"] = "Ferramentas e Tecnologias"
   texto_ingles["titulo_tecnologia"] = "Tools and Technologies"
@@ -92,7 +96,7 @@ function App() {
 
   texto_portugues["titulo_reservaveiculo"] = "Reserva de Veiculo"
   texto_ingles["titulo_reservaveiculo"] = "Vehicle Reservation"
-  
+
   texto_portugues["texto_reservaveiculo"] = "Sistema web desenvolvido para facilitar o processo de reserva de veículo em uma determinada empresa, um administrador deve cadastrar os veículos e os usuários e com isso o usuário poderia acessar o calendário escolher a data e hora de partida e retorno que o sistema mostraria apenas os veículos disponíveis. Logo ele poderia fazer a reserva e isso garantiria que nenhum outro usuário reservasse o mesmo veículo, causando algum conflito de agenda."
   texto_ingles["texto_reservaveiculo"] = "Web system developed to facilitate the vehicle reservation process in a given company, an administrator must register the vehicles and users and with this the user could access the calendar choose the date and time of departure and return, and the system would only show the vehicles available. So he could make the reservation and this would ensure that no other user reserved the same vehicle, causing some schedule conflict."
 
@@ -138,6 +142,13 @@ function App() {
   texto_ingles["nome_fpe4"] = "Rocketseat - Next Level Week"
   texto_portugues["lugar_fpe4"] = "Setup"
   texto_ingles["lugar_fpe4"] = "Setup"
+
+  texto_portugues["tipo_fpe5"] = "Curso"
+  texto_ingles["tipo_fpe5"] = "Course"
+  texto_portugues["nome_fpe5"] = "Java - Web"
+  texto_ingles["nome_fpe5"] = "Java - Web"
+  texto_portugues["lugar_fpe5"] = "Udemy"
+  texto_ingles["lugar_fpe5"] = "Udemy"
 
   texto_portugues["titulo_contato"] = "Contato"
   texto_ingles["titulo_contato"] = "Contact"
@@ -252,20 +263,6 @@ function App() {
     return undefined;
   }
 
-  function deepCopy(obj: any): any {
-    if (obj === null || typeof obj !== 'object') {
-      return obj;
-    }
-
-    const copy: any = Array.isArray(obj) ? [] : {};
-    for (const key in obj) {
-      if (Object.prototype.hasOwnProperty.call(obj, key)) {
-        copy[key] = deepCopy(obj[key]);
-      }
-    }
-
-    return copy;
-  }
 
 
   useEffect(() => {
@@ -371,9 +368,11 @@ function App() {
 
     <>
 
+      {/* Seção responsável pelo carregamento inicial com a sobreposição total da tela e animação do logo de carregamento*/}
       <div className="z-10 w-screen h-screen opacity-70 bg-neutral-900 absolute grid grid-cols-2 transform-gpu will-change-transform" id="blur_bg">
       </div>
 
+      {/* Div utilizadas para efeito de abertura*/}
       <div className="absolute grid grid-cols-2 w-screen h-screen z-20 transform-gpu will-change-transform" id="div_bg_mae">
         <div className="bg-black h-screen" id="esquerda"></div>
         <div className="bg-black h-screen" id="direita"></div>
@@ -385,42 +384,40 @@ function App() {
         </div>
 
       </div>
+      {/* Fim da seção inicial de carregamento*/}
 
       <Header lingua={linguagem} updateLinguagem={updateLinguagem} />
 
-      <div className='bg-black h-screen mb-[-64px]'>
+      {/* Inicio da Seção Inicial com minhas Informações*/}
+      <div className='bg-black h-screen'>
         <div className='flex flex-col items-center justify-center mt-20 gap-10'>
-          <div className='text-defyellow font-bold xl:text-7xl lg:text-5xl tracking-tighter'>
+          <div className='text-defyellow font-bold text-3xl xl:text-7xl lg:text-5xl tracking-tighter'>
             <span>{array_textos!['titulo_inicial']}</span>
           </div>
-
           <div className='flex items-center justify-center'>
             <img src='andrei.jpg' className='rounded-full w-3/12' />
           </div>
-
           <div className='flex flex-col items-center justify-center w-2/4 font-medium gap-5'>
-            <span className='border-l-defyellow border-l-2 pl-3 text-justify whitespace-pre-line xl:text-base lg:text-sm'>{array_textos!['texto_inicial']}
+            <span className='border-l-defyellow border-l-2 pl-3 text-justify whitespace-pre-line text-xs xl:text-base lg:text-sm'>{array_textos!['texto_inicial']}
             </span>
-            <div className='flex justify-center items-center gap-7 xl:text-3xl lg:text-2xl'>
+            <div className='flex justify-center items-center gap-7 text-lg xl:text-3xl lg:text-2xl'>
               <a className="hover:text-defyellow" target="_blank" href='https://www.linkedin.com/in/andrei-mattos-8aa873163/'> <LinkedinLogo /> </a>
               <a className="hover:text-defyellow" target="_blank" href='https://www.instagram.com/mattosandrei/'> <InstagramLogo /> </a>
               <a className="hover:text-defyellow" target="_blank" href='https://github.com/andreimattos06'> <GithubLogo /> </a>
               <a className="hover:text-defyellow" target="_blank" href='mailto:andreimattos06@gmail.com?subject=E mail de Andrei Mattos - Portfoliot'> <EnvelopeSimple /> </a>
             </div>
           </div>
-
-
         </div>
       </div>
+      {/* Fim da Seção Inicial com minhas Informações*/}
 
-      <div className='flex justify-center items-center mb-28'>
 
+
+      {/* Inicio da Seção de Tecnologias Utilizadas*/}
+      <div className='flex justify-center items-center mb-56'>
         <div className='flex flex-col justify-center items-start w-4/6'>
-
           <span className='text-defyellow xl:text-5xl lg:text-3xl font-bold tracking-tighter pb-12'>{array_textos!['titulo_tecnologia']}</span>
-
           <div className='border-l-[1px] border-defyellow pl-3' id="tecnologias">
-
             {tecnologias.map((cada, index) => {
               return (
                 <div className='flex flex-row justify-start items-center w-full text-white xl:text-xl lg:text-base font-medium gap-3 pb-3 opacity-0' id={'tecnologia' + index.toString()}
@@ -432,15 +429,14 @@ function App() {
                   {cada.icone_pericia}
                 </div>
               )
-
             })}
-
           </div>
-
         </div>
-
       </div>
+      {/* Fim da Seção de Tecnologias Utilizadas*/}
 
+
+      {/* Inicio da Seção de Projetos*/}
       <div className='flex justify-center items-center w-full'>
         <img className="w-5/12" src="desktop.svg" />
       </div>
@@ -452,28 +448,22 @@ function App() {
         </div>
       </div>
 
+      {/* Grid Tests*/}
       <div className='w-full flex px-16'>
-
         <div className='bg-black flex rounded-xl border-[1px] border-gray-600 -mt-40 drop-shadow-2xl flex-wrap '>
-
           <div className='border-r-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center w-2/6 h-full gap-7'>
-
             <span className='xl:text-3xl lg:text-xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_lfreceitas"]}</span>
-
             <span className='xl:text-xl lg:text-base font-medium text-justify pt-5 row-span-5'>{array_textos["texto_lfreceitas"]}</span>
-
             <div className='place-self-start flex flex-row justify-center'>
               <span className='xl:text-xl lg:text-base font-semibold text-defyellow'>Front End: </span>
               <Triangle size={24} className='text-white' />
               <span className='xl:text-xl lg:text-base font-medium'> Next.js</span>
             </div>
-
             <div className='place-self-start flex flex-row justify-center'>
               <span className='xl:text-xl lg:text-base font-semibold text-defyellow'>Back End: </span>
               <Hexagon size={24} className='text-green-600' />
               <span className='xl:text-xl lg:text-base font-medium'> Node</span>
             </div>
-
             <div className='place-self-start flex flex-row justify-center xl:text-lg lg:text-sm font-medium row-span-2'>
               <ul className='list-disc list-inside'>
                 <li>Tailwind</li>
@@ -481,7 +471,6 @@ function App() {
                 <li>Prisma</li>
               </ul>
             </div>
-
             <div className='flex flex-col place-self-start justify-start items-start'>
               <a className="hover:text-defyellow flex flex-row justify-between gap-3" target="_blank" href='https://github.com/andreimattos06/LF-Receitas'>
                 <span className='xl:text-lg lg:text-sm font-medium'>Git - Frontend: </span>
@@ -640,16 +629,17 @@ function App() {
 
           <div className='flex justify-center items-end row-span-3'>
             <a className='hover:bg-white rounded-2xl p-4 text-black bg-defyellow hover:text-defyellow transition-all duration-700' target='_blank' href='https://reserva-de-veiculo.vercel.app/'>
-              <MagnifyingGlassPlus className='xl:text-4xl lg:text-2xl'/>
+              <MagnifyingGlassPlus className='xl:text-4xl lg:text-2xl' />
             </a>
           </div>
 
 
         </div>
       </div>
+      {/* Fim da Seção de Projetos*/}
 
 
-
+      {/* Inicio da Seção de Participações e Eventos*/}
       <div>
         <div className='w-full flex-row flex text-defyellow xl:text-5xl lg:text-3xl tracking-tighter font-bold justify-center items-center gap-5'>
           <hr className='grow border-defyellow border-2' />
@@ -695,23 +685,12 @@ function App() {
           <div className='col-span-9' onLoad={div_animadas_slide_left.push("esquerda1")} />
 
 
-
-          <div className='col-span-4 bg-defyellow w-full rounded-r-md -right-96 relative' id="esquerda2">
-            <div className='flex items-center justify-start py-5 px-5 gap-5'>
-              <Certificate className='lg:text-7xl text-black' />
-              <div className='flex flex-col justify-center items-center xl:text-xl lg:text-base text-black font-semibold w-full'>
-                <span>{array_textos["tipo_fpe2"]}</span>
-                <span>{array_textos["nome_fpe2"]}</span>
-                <span>{array_textos["lugar_fpe2"]}</span>
-              </div>
-
-            </div>
+          <div className='col-span-4'>
           </div>
-          {/* @ts-ignore */}
           <div className='col-span-1 xl:text-4xl lg:text-2xl font-bold'>
             2022
           </div>
-          <div className='col-span-4 bg-defyellow w-full rounded-l-md -right-96 relative' id="direita1">
+          <div className='col-span-4 bg-defyellow w-full rounded-l-md relative -right-96' id="direita1">
             <div className='flex items-center justify-start py-5 px-5 gap-5'>
 
               <div className='flex flex-col justify-center items-center xl:text-xl lg:text-base text-black font-semibold w-full'>
@@ -723,23 +702,59 @@ function App() {
             </div>
           </div>
           {/* @ts-ignore */}
-          <div className='col-span-9' onLoad={div_animadas_slide_right.push("direita1"), div_animadas_slide_left.push("esquerda2")} />
+          <div className='col-span-9' onLoad={div_animadas_slide_right.push("direita1")} />
+
+          <div className='col-span-4 bg-defyellow w-full rounded-r-md relative -left-96' id="esquerda2">
+            <div className='flex items-center justify-start py-5 px-5 gap-5'>
+              <Certificate className='lg:text-7xl text-black' />
+              <div className='flex flex-col justify-center items-center xl:text-xl lg:text-base text-black font-semibold w-full'>
+                <span>{array_textos["tipo_fpe2"]}</span>
+                <span>{array_textos["nome_fpe2"]}</span>
+                <span>{array_textos["lugar_fpe2"]}</span>
+              </div>
+
+            </div>
+          </div>
+          <div className='col-span-1 xl:text-4xl lg:text-2xl font-bold'>
+            2022
+          </div>
+          <div className='col-span-4'>
+          </div>
+          {/* @ts-ignore */}
+          <div className='col-span-9' onLoad={div_animadas_slide_left.push("esquerda2")} />
 
 
 
-          <div className='col-span-4 bg-defyellow w-full rounded-r-md -left-96 relative' id="esquerda3">
+          <div className='col-span-4'>
+          </div>
+          <div className='col-span-1 xl:text-4xl lg:text-2xl font-bold'>
+            2023
+          </div>
+          <div className='col-span-4 bg-defyellow w-full rounded-l-md -right-96 relative' id="direita2">
             <div className='flex items-center justify-start py-5 px-5 gap-5'>
               <Wrench className='lg:text-7xl text-black' />
               <div className='flex flex-col justify-center items-center xl:text-xl lg:text-base text-black font-semibold w-full'>
                 <span>{array_textos["tipo_fpe4"]}</span>
                 <span>{array_textos["nome_fpe4"]}</span>
                 <span>{array_textos["lugar_fpe4"]}</span>
-
               </div>
             </div>
           </div>
+          {/* @ts-ignore */}
+          <div className='col-span-9' onLoad={div_animadas_slide_right.push("direita2")} />
+
+          <div className='col-span-4 bg-defyellow w-full rounded-r-md relative -left-96' id="esquerda3">
+            <div className='flex items-center justify-start py-5 px-5 gap-5'>
+              <div className='flex flex-col justify-center items-center xl:text-xl lg:text-base text-black font-semibold w-full'>
+                <span>{array_textos["tipo_fpe5"]}</span>
+                <span>{array_textos["nome_fpe5"]}</span>
+                <span>{array_textos["lugar_fpe5"]}</span>
+              </div>
+              <Coffee className='lg:text-7xl text-black' />
+            </div>
+          </div>
           <div className='col-span-1 xl:text-4xl lg:text-2xl font-bold'>
-            2023
+            2024
           </div>
           <div className='col-span-4'>
           </div>
@@ -748,7 +763,10 @@ function App() {
 
         </div>
       </div>
+      {/* Fim da Seção de Participações e Eventos*/}
 
+
+      {/* Inicio da Seção de Contato*/}
       <div className='w-full flex-row flex text-defyellow xl:text-5xl lg:text-3xl tracking-tighter font-bold items-center gap-5 mt-48'>
         <hr className='border-defyellow border-2 w-1/12' />
         <span className='text-defyellow xl:text-5xl lg:text-3xl'>{array_textos["titulo_contato"]}</span>
@@ -761,13 +779,14 @@ function App() {
           <Input value={send_email} Evento={setSendEmail} placeholder={array_textos["email_placeholder"]} icon={<EnvelopeSimple size={32} />} />
           <Input value={send_texto} Evento={setSendTexto} placeholder={array_textos["mensagem_placeholder"]} icon={<TextAlignJustify size={32} />} />
 
-          <a href={"mailto:andreimattos06@gmail.com?subject=" + send_nomecompleto + " - " + send_email +  "&body=" + send_texto}>
-            <button className='lg:text-base xl:text-lg flex items-center gap-3 border-2 py-2 px-1 border-defyellow text-defyellow justify-center bg-black w-2/12 hover:bg-defyellow hover:text-black duration-700'><PaperPlaneTilt className='lg:text-lg xl:text-2xl'/>
+          <a href={"mailto:andreimattos06@gmail.com?subject=" + send_nomecompleto + " - " + send_email + "&body=" + send_texto}>
+            <button className='lg:text-base xl:text-lg flex items-center gap-3 border-2 py-2 px-1 border-defyellow text-defyellow justify-center bg-black w-2/12 hover:bg-defyellow hover:text-black duration-700'><PaperPlaneTilt className='lg:text-lg xl:text-2xl' />
               {array_textos["bottao_enviar"]}
             </button>
           </a>
         </div>
       </div>
+      {/* Fim da Seção de Contato*/}
 
       <div className='w-full mt-28 flex items-center justify-center text-white text-xs'>
         <span>Andrei dos Santos Mattos - 2023</span>
@@ -777,8 +796,6 @@ function App() {
     </>
   )
 }
-
-
 
 
 export default App

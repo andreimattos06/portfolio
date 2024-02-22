@@ -1,6 +1,7 @@
 import { List, X } from "@phosphor-icons/react";
 import { LogoAnimado } from "./LogoAnimado";
 import { useEffect, useState } from "react";
+import { deepCopy } from '../utils/DeepCopy'
 import clsx from "clsx";
 
 interface HeaderProps{
@@ -8,18 +9,51 @@ interface HeaderProps{
     updateLinguagem: (newLinguagem: boolean) => void
 }
 
+interface textos {
+    [key: string]: string;
+  }
+
 export function Header(props: HeaderProps){
 
 const [isMenuOpen, setIsMenuOpen] = useState(false)
 const [buttonMenuDiv, setButtonMenuDiv] = useState(true)
 const [divMenuOriPos, setdivMenuOriPos] = useState(0) 
 const [opcoesMenu, setOpcoesMenu] = useState(false)
+const [array_textos, setArrayTextos] = useState<textos>({})
+const texto_ingles: textos = {}
+const texto_portugues: textos = {}
+
+texto_portugues['primeiro'] = "Sobre Mim"
+texto_ingles['primeiro'] = "About Me"
+
+texto_portugues['segundo'] = "Ferramentas e Tecnologias"
+texto_ingles['segundo'] = "Tools and Technologies"
+
+texto_portugues['terceiro'] = "Projetos"
+texto_ingles['terceiro'] = "Projects"
+
+texto_portugues['quarto'] = "Formações e Participações em Eventos"
+texto_ingles['quarto'] = "Trainings and Participations is Events"
+
+texto_portugues['quinto'] = "Contato"
+texto_ingles['quinto'] = "Contact"
 
 useEffect(() => {
     if (isMenuOpen){
         document.body.style.overflowY = 'hidden'
     }
 },[isMenuOpen])
+
+useEffect(() => {
+
+    if (props.lingua) {
+      setArrayTextos(deepCopy(texto_portugues))
+
+    }
+    else {
+      setArrayTextos(deepCopy(texto_ingles))
+    }
+  }, [props.lingua])
 
 
 
@@ -140,23 +174,21 @@ function clickMenu(){
 
                 <div id="opcoes_menu" className="opacity-0">
                     {opcoesMenu ? 
-                        <div className="grid grid-cols-1 pt-32 xl:text-6xl lg:text-4xl gap-10 font-semibold content-center place-items-center" >
-
-                                <span className="text-defyellow">Under construction</span>
-                                <span>Under construction</span>
-                                <span>Under construction</span>
+                        <div className="grid grid-cols-1 pt-32 text-base md:text-xl xl:text-4xl lg:text-2xl gap-10 font-semibold content-center place-items-center" >
+                                <span>{array_textos['primeiro']}</span>
+                                <span>{array_textos['segundo']}</span>
+                                <span>{array_textos['terceiro']}</span>
+                                <span>{array_textos['quarto']}</span>
+                                <span>{array_textos['quinto']}</span>                                
                                 <div className="flex flex-row w-full gap-3 items-center justify-center">
-                                    <button className={clsx('xl:w-[3.24rem] lg:w-[2.5rem] hover:opacity-100 duration-700', {'opacity-40' : !props.lingua})} onClick={() => props.updateLinguagem(true)}>
+                                    <button className={clsx('w-6 xl:w-[3.24rem] lg:w-[2.5rem] hover:opacity-100 duration-700', {'opacity-40' : !props.lingua})} onClick={() => props.updateLinguagem(true)}>
                                         <img src="brasil.svg" />
                                     </button>
-                                    <button className={clsx('xl:w-14 lg:w-[2.5rem] hover:opacity-100 duration-700', {'opacity-40' : props.lingua})} onClick={() => props.updateLinguagem(false)}>
+                                    <button className={clsx('w-6 xl:w-14 lg:w-[2.5rem] hover:opacity-100 duration-700', {'opacity-40' : props.lingua})} onClick={() => props.updateLinguagem(false)}>
                                         <img src="english.svg" />
-                                    </button>
-                                    
-                                </div>
-                                
+                                    </button>                                    
+                                </div>                                
                         </div> 
-
                         : 
                         <></>
                     }
