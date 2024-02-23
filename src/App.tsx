@@ -24,31 +24,31 @@ function App() {
 
   const tecnologias: ferramentasETecnologias[] = [
     {
-      nome: "Java", marcacao: <DotOutline size={28} />, icone_tecnologia: <Coffee size={28} className='text-defyellow' />, icone_pericia: <Fire size={28} className='bg-red-600 rounded-full p-1' />
+      nome: "Java", marcacao: <DotOutline className='text-xl lg:text-3xl'/>, icone_tecnologia: <Coffee className='text-defyellow text-lg lg:text-3xl' />, icone_pericia: <Fire className='bg-red-600 rounded-full p-1 text-lg lg:text-3xl' />
     },
     {
-      nome: "React", marcacao: <DotOutline size={28} />, icone_tecnologia: <Atom size={28} className='text-defyellow' />, icone_pericia: <Fire size={28} className='bg-red-600 rounded-full p-1' />
+      nome: "React", marcacao: <DotOutline className='text-xl lg:text-3xl' />, icone_tecnologia: <Atom className='text-defyellow text-lg lg:text-3xl' />, icone_pericia: <Fire className='bg-red-600 rounded-full p-1 text-lg lg:text-3xl' />
     },
     {
-      nome: "Next.js", marcacao: <DotOutline size={28} />, icone_tecnologia: <Triangle size={28} className='text-defyellow' />, icone_pericia: <Fire size={28} className='bg-red-600 rounded-full p-1' />
+      nome: "Next.js", marcacao: <DotOutline className='text-xl lg:text-3xl' />, icone_tecnologia: <Triangle className='text-defyellow text-lg lg:text-3xl' />, icone_pericia: <Fire className='bg-red-600 rounded-full p-1 text-lg lg:text-3xl' />
     },
     {
-      nome: "TypeScript", marcacao: <DotOutline size={28} />, icone_tecnologia: <FileTs size={28} className='text-defyellow' />, icone_pericia: <Fire size={28} className='bg-red-600 rounded-full p-1' />
+      nome: "TypeScript", marcacao: <DotOutline className='text-xl lg:text-3xl' />, icone_tecnologia: <FileTs className='text-defyellow text-lg lg:text-3xl' />, icone_pericia: <Fire className='bg-red-600 rounded-full p-1 text-lg lg:text-3xl' />
     },
     {
-      nome: "JavaScript", marcacao: <DotOutline size={28} />, icone_tecnologia: <FileJs size={28} className='text-defyellow' />, icone_pericia: <Fire size={28} className='bg-red-600 rounded-full p-1' />
+      nome: "JavaScript", marcacao: <DotOutline className='text-xl lg:text-3xl' />, icone_tecnologia: <FileJs className='text-defyellow text-lg lg:text-3xl' />, icone_pericia: <Fire className='bg-red-600 rounded-full p-1 text-lg lg:text-3xl' />
     },
     {
-      nome: "Tailwind CSS", marcacao: <DotOutline size={28} />, icone_tecnologia: <Broom size={28} className='text-defyellow' />, icone_pericia: <Fire size={28} className='bg-red-600 rounded-full p-1' />
+      nome: "Tailwind CSS", marcacao: <DotOutline className='text-xl lg:text-3xl' />, icone_tecnologia: <Broom className='text-defyellow text-lg lg:text-3xl' />, icone_pericia: <Fire className='bg-red-600 rounded-full p-1 text-lg lg:text-3xl' />
     },
     {
-      nome: "HTML / CSS", marcacao: <DotOutline size={28} />, icone_tecnologia: <FileJs size={28} className='text-defyellow' />, icone_pericia: <Fire size={28} className='bg-red-600 rounded-full p-1' />
+      nome: "HTML / CSS", marcacao: <DotOutline className='text-xl lg:text-3xl' />, icone_tecnologia: <FileJs className='text-defyellow text-lg lg:text-3xl' />, icone_pericia: <Fire className='bg-red-600 rounded-full p-1 text-lg lg:text-3xl' />
     },
     {
-      nome: "Node", marcacao: <DotOutline size={28} />, icone_tecnologia: <Hexagon size={28} className='text-defyellow' />, icone_pericia: <Equals size={28} className='bg-yellow-500 rounded-full p-1' />
+      nome: "Node", marcacao: <DotOutline className='text-xl lg:text-3xl' />, icone_tecnologia: <Hexagon className='text-defyellow text-lg lg:text-3xl' />, icone_pericia: <Equals className='bg-yellow-500 rounded-full p-1 text-lg lg:text-3xl' />
     },
     {
-      nome: "Jasmine", marcacao: <DotOutline size={28} />, icone_tecnologia: <Seal size={28} className='text-defyellow' />, icone_pericia: <Equals size={28} className='bg-yellow-500 rounded-full p-1' />
+      nome: "Jasmine", marcacao: <DotOutline className='text-xl lg:text-3xl' />, icone_tecnologia: <Seal className='text-defyellow text-lg lg:text-3xl' />, icone_pericia: <Equals className='bg-yellow-500 rounded-full p-1 text-lg lg:text-3xl' />
     }
   ]
 
@@ -389,7 +389,7 @@ function App() {
       <Header lingua={linguagem} updateLinguagem={updateLinguagem} />
 
       {/* Inicio da Seção Inicial com minhas Informações*/}
-      <div className='bg-black h-screen'>
+      <div className='bg-black mb-44 lg:mb-0 lg:h-screen '>
         <div className='flex flex-col items-center justify-center mt-20 gap-10'>
           <div className='text-defyellow font-bold text-3xl xl:text-7xl lg:text-5xl tracking-tighter'>
             <span>{array_textos!['titulo_inicial']}</span>
@@ -416,11 +416,11 @@ function App() {
       {/* Inicio da Seção de Tecnologias Utilizadas*/}
       <div className='flex justify-center items-center mb-56'>
         <div className='flex flex-col justify-center items-start w-4/6'>
-          <span className='text-defyellow xl:text-5xl lg:text-3xl font-bold tracking-tighter pb-12'>{array_textos!['titulo_tecnologia']}</span>
+          <span className='text-defyellow text-xl xl:text-5xl lg:text-3xl font-bold tracking-tighter pb-12'>{array_textos!['titulo_tecnologia']}</span>
           <div className='border-l-[1px] border-defyellow pl-3' id="tecnologias">
             {tecnologias.map((cada, index) => {
               return (
-                <div className='flex flex-row justify-start items-center w-full text-white xl:text-xl lg:text-base font-medium gap-3 pb-3 opacity-0' id={'tecnologia' + index.toString()}
+                <div className='flex flex-row justify-start items-center w-full text-white text-xs xl:text-xl lg:text-base font-medium gap-3 pb-3 opacity-0' id={'tecnologia' + index.toString()}
                   /* @ts-ignore */
                   onLoad={div_animadas.push('tecnologia' + index.toString())}>
                   {cada.marcacao}

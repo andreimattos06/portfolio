@@ -38,11 +38,12 @@ texto_ingles['quarto'] = "Trainings and Participations is Events"
 texto_portugues['quinto'] = "Contato"
 texto_ingles['quinto'] = "Contact"
 
-useEffect(() => {
+/*useEffect(() => {
     if (isMenuOpen){
-        document.body.style.overflowY = 'hidden'
+        //document.body.style.overflowY = 'hidden'
     }
 },[isMenuOpen])
+*/
 
 useEffect(() => {
 
@@ -108,7 +109,7 @@ function clickMenu(){
     function downResize() {
         if (pos <= divMenuOriPos) {
             setButtonMenuDiv(true)
-            document.body.style.overflowY = 'auto'
+            //document.body.style.overflowY = 'auto'
             clearInterval(id);          
         } else if (elem) {
             pos = pos - 4; 
@@ -150,36 +151,29 @@ function clickMenu(){
 
 
     return(
-        <>
-            
-
-            <div className="w-full bg-transparent flex flex-col items-center px-24 py-16 z-0 transform-gpu will-change-transform" id='buttondiv'>
+        <>          
+            <div className={clsx("w-full bg-transparent flex flex-col items-center px-12 py-8 lg:px-24 lg:py-16 z-0 transform-gpu will-change-transform", {'border-b-[1px] border-white/20' : isMenuOpen})} id='buttondiv'>
                 <div className="flex justify-between items-center w-full">
-
                     <div>
                         <LogoAnimado />
                     </div>
-
                     <div className="flex justify-center items-center">
-
                         <div className="fixed">
-                            <button onClick={clickMenu} id="menuButton" className="p-3 xl:text-3xl lg:text-xl transition ease-in duration-200 hover:bg-defyellow w-full rounded-full border-2 border-defyellow">
+                            <button onClick={clickMenu} id="menuButton" className="p-1 xl:p-3 text-sm xl:text-3xl lg:text-xl transition ease-in duration-200 hover:bg-defyellow w-full rounded-full border-2 border-defyellow">
                                 {isMenuOpen ?  <X/> : <List/>}
                             </button>
                             
                         </div>
-                    </div>   
-
+                    </div>  
                 </div>
-
                 <div id="opcoes_menu" className="opacity-0">
                     {opcoesMenu ? 
-                        <div className="grid grid-cols-1 pt-32 text-base md:text-xl xl:text-4xl lg:text-2xl gap-10 font-semibold content-center place-items-center" >
-                                <span>{array_textos['primeiro']}</span>
-                                <span>{array_textos['segundo']}</span>
-                                <span>{array_textos['terceiro']}</span>
-                                <span>{array_textos['quarto']}</span>
-                                <span>{array_textos['quinto']}</span>                                
+                        <div className="grid grid-cols-1 pt-8 lg:pt-32 text-base md:text-xl xl:text-4xl lg:text-2xl gap-10 font-semibold content-center place-items-center text-center" >
+                                <button className="hover:text-defyellow">{array_textos['primeiro']}</button>
+                                <button className="hover:text-defyellow">{array_textos['segundo']}</button>
+                                <button className="hover:text-defyellow">{array_textos['terceiro']}</button>
+                                <button className="hover:text-defyellow">{array_textos['quarto']}</button>
+                                <button className="hover:text-defyellow">{array_textos['quinto']}</button>                                
                                 <div className="flex flex-row w-full gap-3 items-center justify-center">
                                     <button className={clsx('w-6 xl:w-[3.24rem] lg:w-[2.5rem] hover:opacity-100 duration-700', {'opacity-40' : !props.lingua})} onClick={() => props.updateLinguagem(true)}>
                                         <img src="brasil.svg" />
