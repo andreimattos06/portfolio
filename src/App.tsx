@@ -389,7 +389,7 @@ function App() {
       <Header lingua={linguagem} updateLinguagem={updateLinguagem} />
 
       {/* Inicio da Seção Inicial com minhas Informações*/}
-      <div className='bg-black mb-44 lg:mb-0 lg:h-screen '>
+      <div className='bg-black mb-44 lg:mb-52 xl:mb-56 lg:h-screen '>
         <div className='flex flex-col items-center justify-center mt-20 gap-10'>
           <div className='text-defyellow font-bold text-3xl xl:text-7xl lg:text-5xl tracking-tighter'>
             <span>{array_textos!['titulo_inicial']}</span>
@@ -641,8 +641,8 @@ function App() {
 
       {/* Inicio da Seção de Participações e Eventos*/}
       <div>
-        <div className='w-full flex-row flex text-defyellow xl:text-5xl lg:text-3xl tracking-tighter font-bold justify-center items-center gap-5'>
-          <hr className='grow border-defyellow border-2' />
+        <div className='w-full flex-row flex text-defyellow text-xl xl:text-5xl lg:text-3xl tracking-tighter font-bold justify-center items-center gap-5'>
+          <hr className='grow border-defyellow border-[1px] lg:border-2' />
           <div>
             {/* @ts-ignore */}
             <span className='opacity-0' id="For" onLoad={texto_animado.push("For")}>{array_textos["titulo_fpe1"]}</span>
@@ -656,19 +656,16 @@ function App() {
             {/* @ts-ignore */}
             <span className='opacity-0' id="tos" onLoad={texto_animado.push("tos")}>{array_textos["titulo_fpe7"]}</span>
           </div>
-
-          <hr className='grow border-defyellow border-2' />
+          <hr className='grow border-defyellow border-[1px] lg:border-2' />
         </div>
 
 
 
         <div className='grid grid-cols-9 justify-center place-items-center mt-48 gap-20 relative'>
-
-
           <div className='col-span-4 bg-defyellow w-full rounded-r-md -left-96 relative' id="esquerda1">
             <div className='flex items-center justify-start py-5 px-5 gap-5'>
-              <GraduationCap className='lg:text-7xl text-black' />
-              <div className='flex flex-col justify-center items-center xl:text-xl lg:text-base text-black font-semibold w-full'>
+              <GraduationCap className='text-2xl lg:text-7xl text-black' />
+              <div className='flex flex-col justify-center items-center text-center text-xs xl:text-xl lg:text-base text-black font-semibold w-full'>
                 <span>{array_textos["tipo_fpe1"]}</span>
                 <span>{array_textos["nome_fpe1"]}</span>
                 <span>{array_textos["lugar_fpe1"]}</span>
@@ -676,7 +673,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className='col-span-1 xl:text-4xl lg:text-2xl font-bold'>
+          <div className='col-span-1 text-sm xl:text-4xl lg:text-2xl font-bold'>
             2019
           </div>
           <div className='col-span-4'>
@@ -687,18 +684,18 @@ function App() {
 
           <div className='col-span-4'>
           </div>
-          <div className='col-span-1 xl:text-4xl lg:text-2xl font-bold'>
+          <div className='col-span-1 text-sm xl:text-4xl lg:text-2xl font-bold'>
             2022
           </div>
           <div className='col-span-4 bg-defyellow w-full rounded-l-md relative -right-96' id="direita1">
             <div className='flex items-center justify-start py-5 px-5 gap-5'>
 
-              <div className='flex flex-col justify-center items-center xl:text-xl lg:text-base text-black font-semibold w-full'>
+              <div className='flex flex-col justify-center items-center text-center text-xs xl:text-xl lg:text-base text-black font-semibold w-full'>
                 <span>{array_textos["tipo_fpe3"]}</span>
                 <span>{array_textos["nome_fpe3"]}</span>
                 <span>{array_textos["lugar_fpe3"]}</span>
               </div>
-              <RocketLaunch className='lg:text-7xl text-black' />
+              <RocketLaunch className='text-2xl lg:text-7xl text-black' />
             </div>
           </div>
           {/* @ts-ignore */}
@@ -706,8 +703,8 @@ function App() {
 
           <div className='col-span-4 bg-defyellow w-full rounded-r-md relative -left-96' id="esquerda2">
             <div className='flex items-center justify-start py-5 px-5 gap-5'>
-              <Certificate className='lg:text-7xl text-black' />
-              <div className='flex flex-col justify-center items-center xl:text-xl lg:text-base text-black font-semibold w-full'>
+              <Certificate className='text-2xl lg:text-7xl text-black' />
+              <div className='flex flex-col justify-center items-center text-center text-xs xl:text-xl lg:text-base text-black font-semibold w-full'>
                 <span>{array_textos["tipo_fpe2"]}</span>
                 <span>{array_textos["nome_fpe2"]}</span>
                 <span>{array_textos["lugar_fpe2"]}</span>
@@ -715,7 +712,7 @@ function App() {
 
             </div>
           </div>
-          <div className='col-span-1 xl:text-4xl lg:text-2xl font-bold'>
+          <div className='col-span-1 text-sm xl:text-4xl lg:text-2xl font-bold'>
             2022
           </div>
           <div className='col-span-4'>
@@ -727,13 +724,13 @@ function App() {
 
           <div className='col-span-4'>
           </div>
-          <div className='col-span-1 xl:text-4xl lg:text-2xl font-bold'>
+          <div className='col-span-1 text-sm xl:text-4xl lg:text-2xl font-bold'>
             2023
           </div>
           <div className='col-span-4 bg-defyellow w-full rounded-l-md -right-96 relative' id="direita2">
             <div className='flex items-center justify-start py-5 px-5 gap-5'>
-              <Wrench className='lg:text-7xl text-black' />
-              <div className='flex flex-col justify-center items-center xl:text-xl lg:text-base text-black font-semibold w-full'>
+              <Wrench className='text-2xl lg:text-7xl text-black' />
+              <div className='flex flex-col justify-center items-center text-center text-xs xl:text-xl lg:text-base text-black font-semibold w-full'>
                 <span>{array_textos["tipo_fpe4"]}</span>
                 <span>{array_textos["nome_fpe4"]}</span>
                 <span>{array_textos["lugar_fpe4"]}</span>
@@ -745,15 +742,15 @@ function App() {
 
           <div className='col-span-4 bg-defyellow w-full rounded-r-md relative -left-96' id="esquerda3">
             <div className='flex items-center justify-start py-5 px-5 gap-5'>
-              <div className='flex flex-col justify-center items-center xl:text-xl lg:text-base text-black font-semibold w-full'>
+              <div className='flex flex-col justify-center items-center text-center text-xs xl:text-xl lg:text-base text-black font-semibold w-full'>
                 <span>{array_textos["tipo_fpe5"]}</span>
                 <span>{array_textos["nome_fpe5"]}</span>
                 <span>{array_textos["lugar_fpe5"]}</span>
               </div>
-              <Coffee className='lg:text-7xl text-black' />
+              <Coffee className='text-2xl lg:text-7xl text-black' />
             </div>
           </div>
-          <div className='col-span-1 xl:text-4xl lg:text-2xl font-bold'>
+          <div className='col-span-1 text-sm xl:text-4xl lg:text-2xl font-bold'>
             2024
           </div>
           <div className='col-span-4'>
@@ -767,20 +764,20 @@ function App() {
 
 
       {/* Inicio da Seção de Contato*/}
-      <div className='w-full flex-row flex text-defyellow xl:text-5xl lg:text-3xl tracking-tighter font-bold items-center gap-5 mt-48'>
-        <hr className='border-defyellow border-2 w-1/12' />
-        <span className='text-defyellow xl:text-5xl lg:text-3xl'>{array_textos["titulo_contato"]}</span>
-        <hr className='grow border-defyellow border-2' />
+      <div className='w-full flex-row flex text-defyellow tracking-tighter font-bold items-center gap-5 mt-48'>
+        <hr className='border-defyellow border-[1px] xl:border-2 w-1/12' />
+        <span className='text-defyellow text-xl xl:text-5xl lg:text-3xl'>{array_textos["titulo_contato"]}</span>
+        <hr className='grow border-defyellow border-[1px] xl:border-2' />
       </div>
 
       <div className='w-full flex justify-center items-center'>
         <div className='w-6/12 grid grid-cols-1 mt-20 gap-5'>
-          <Input value={send_nomecompleto} Evento={setSendNomeCompleto} placeholder={array_textos["nome_placeholder"]} icon={<User size={32} />} />
-          <Input value={send_email} Evento={setSendEmail} placeholder={array_textos["email_placeholder"]} icon={<EnvelopeSimple size={32} />} />
-          <Input value={send_texto} Evento={setSendTexto} placeholder={array_textos["mensagem_placeholder"]} icon={<TextAlignJustify size={32} />} />
+          <Input value={send_nomecompleto} Evento={setSendNomeCompleto} placeholder={array_textos["nome_placeholder"]} icon={<User />} />
+          <Input value={send_email} Evento={setSendEmail} placeholder={array_textos["email_placeholder"]} icon={<EnvelopeSimple />} />
+          <Input value={send_texto} Evento={setSendTexto} placeholder={array_textos["mensagem_placeholder"]} icon={<TextAlignJustify />} />
 
           <a href={"mailto:andreimattos06@gmail.com?subject=" + send_nomecompleto + " - " + send_email + "&body=" + send_texto}>
-            <button className='lg:text-base xl:text-lg flex items-center gap-3 border-2 py-2 px-1 border-defyellow text-defyellow justify-center bg-black w-2/12 hover:bg-defyellow hover:text-black duration-700'><PaperPlaneTilt className='lg:text-lg xl:text-2xl' />
+            <button className='text-sm lg:text-base xl:text-lg flex items-center gap-2 lg:gap-3 border-[1px] lg:border-2 py-2 lg:px-1 border-defyellow text-defyellow justify-center bg-black w-4/12 lg:w-2/12 hover:bg-defyellow hover:text-black duration-700'><PaperPlaneTilt className='text-sm lg:text-lg xl:text-2xl' />
               {array_textos["bottao_enviar"]}
             </button>
           </a>
