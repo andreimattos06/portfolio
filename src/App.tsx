@@ -24,7 +24,7 @@ function App() {
 
   const tecnologias: ferramentasETecnologias[] = [
     {
-      nome: "Java", marcacao: <DotOutline className='text-xl lg:text-3xl'/>, icone_tecnologia: <Coffee className='text-defyellow text-lg lg:text-3xl' />, icone_pericia: <Fire className='bg-red-600 rounded-full p-1 text-lg lg:text-3xl' />
+      nome: "Java", marcacao: <DotOutline className='text-xl lg:text-3xl' />, icone_tecnologia: <Coffee className='text-defyellow text-lg lg:text-3xl' />, icone_pericia: <Fire className='bg-red-600 rounded-full p-1 text-lg lg:text-3xl' />
     },
     {
       nome: "React", marcacao: <DotOutline className='text-xl lg:text-3xl' />, icone_tecnologia: <Atom className='text-defyellow text-lg lg:text-3xl' />, icone_pericia: <Fire className='bg-red-600 rounded-full p-1 text-lg lg:text-3xl' />
@@ -64,8 +64,8 @@ function App() {
   texto_portugues["titulo_inicial"] = "Bem-Vindo"
   texto_ingles["titulo_inicial"] = "Welcome"
 
-  texto_portugues["texto_inicial"] = "👋 Olá 👋, meu nome é Andrei Mattos, tenho 28 anos e sou um entusiasta da tecnologia 💻😎❗\n\n🤵🏼 Atuo como desenvolvedor web Fullstack 🌐 com foco no backend mas também possuo experiência em desenvolvimento frontend ❗\n\n🏆 Vamos construir juntos o futuro da web ❗"
-  texto_ingles["texto_inicial"] = "👋 Hello 👋, my name is Andrei Mattos, im 28 years old and a technology enthusiast 💻😎❗\n\n🤵🏼 I work as a Fullstack web developer 🌐 focusing on the backend but i also have experience in frontend development ❗\n\n🏆 Let's build the future of web together ❗"
+  texto_portugues["texto_inicial"] = "👋 Olá 👋, meu nome é Andrei Mattos, tenho 28 anos e sou um entusiasta da tecnologia 💻😎❗\n\n🤵🏼 Atuo como desenvolvedor Web Fullstack 🌐 com foco no Backend ❗\n\n🏆 Vamos construir juntos o futuro da web ❗"
+  texto_ingles["texto_inicial"] = "👋 Hello 👋, my name is Andrei Mattos, im 28 years old and a technology enthusiast 💻😎❗\n\n🤵🏼 I work as a Fullstack Web developer 🌐 focusing on the Backend ❗\n\n🏆 Let's build the future of web together ❗"
 
   texto_portugues["titulo_tecnologia"] = "Ferramentas e Tecnologias"
   texto_ingles["titulo_tecnologia"] = "Tools and Technologies"
@@ -389,7 +389,7 @@ function App() {
       <Header lingua={linguagem} updateLinguagem={updateLinguagem} />
 
       {/* Inicio da Seção Inicial com minhas Informações*/}
-      <div className='bg-black mb-44 lg:mb-52 xl:mb-56 lg:h-screen '>
+      <div className='bg-black mb-44 lg:mb-52 xl:mb-56'>
         <div className='flex flex-col items-center justify-center mt-20 gap-10'>
           <div className='text-defyellow font-bold text-3xl xl:text-7xl lg:text-5xl tracking-tighter'>
             <span>{array_textos!['titulo_inicial']}</span>
@@ -442,29 +442,29 @@ function App() {
       </div>
 
       <div className='bg-defyellow w-full flex justify-center'>
-        <div className='flex flex-col items-center justify-center text-black xl:py-64 lg:pb-48 lg:pt-24 w-6/12 gap-10 text-justify'>
-          <span className='xl:text-5xl lg:text-3xl font-bold'>{array_textos["titulo_projetos"]}</span>
-          <span className='xl:text-xl lg:text-sm'>{array_textos["texto_projetos"]}</span>
+        <div className='flex flex-col items-center justify-center text-black pt-12 pb-24 xl:py-64 lg:pb-48 lg:pt-24 w-6/12 gap-10 text-justify'>
+          <span className='xl:text-5xl lg:text-3xl text-xl font-bold'>{array_textos["titulo_projetos"]}</span>
+          <span className='xl:text-xl text-sm'>{array_textos["texto_projetos"]}</span>
         </div>
       </div>
 
-      {/* Grid Tests*/}
+      {/*Inicio da Seção de Projetos*/}
       <div className='w-full flex px-16'>
-        <div className='bg-black flex rounded-xl border-[1px] border-gray-600 -mt-40 drop-shadow-2xl flex-wrap '>
-          <div className='border-r-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center w-2/6 h-full gap-7'>
-            <span className='xl:text-3xl lg:text-xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_lfreceitas"]}</span>
-            <span className='xl:text-xl lg:text-base font-medium text-justify pt-5 row-span-5'>{array_textos["texto_lfreceitas"]}</span>
+        <div className='flex rounded-xl -mt-20 lg:-mt-40 drop-shadow-2xl flex-wrap justify-center gap-5'>
+          <div className='bg-black rounded-xl border-r-[1px] border-l-[1px] border-b-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center h-auto gap-7 basis-full md:basis-2/4 lg:basis-1/3'>
+            <span className='text-base xl:text-3xl lg:text-xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_lfreceitas"]}</span>
+            <span className='text-sm xl:text-xl lg:text-base font-medium text-justify pt-5 row-span-5'>{array_textos["texto_lfreceitas"]}</span>
             <div className='place-self-start flex flex-row justify-center'>
-              <span className='xl:text-xl lg:text-base font-semibold text-defyellow'>Front End: </span>
-              <Triangle size={24} className='text-white' />
-              <span className='xl:text-xl lg:text-base font-medium'> Next.js</span>
+              <span className='text-sm xl:text-xl lg:text-base font-semibold text-defyellow'>Front End: </span>
+              <Triangle className='text-white text-lg lg:text-2xl' />
+              <span className='text-sm xl:text-xl lg:text-base font-medium'> Next.js</span>
             </div>
             <div className='place-self-start flex flex-row justify-center'>
-              <span className='xl:text-xl lg:text-base font-semibold text-defyellow'>Back End: </span>
-              <Hexagon size={24} className='text-green-600' />
-              <span className='xl:text-xl lg:text-base font-medium'> Node</span>
+              <span className='text-sm xl:text-xl lg:text-base font-semibold text-defyellow'>Back End: </span>
+              <Hexagon className='text-lg lg:text-2xl text-green-600' />
+              <span className='text-sm xl:text-xl lg:text-base font-medium'> Node</span>
             </div>
-            <div className='place-self-start flex flex-row justify-center xl:text-lg lg:text-sm font-medium row-span-2'>
+            <div className='place-self-start flex flex-row justify-center xl:text-lg text-sm font-medium row-span-2'>
               <ul className='list-disc list-inside'>
                 <li>Tailwind</li>
                 <li>Typescript</li>
@@ -473,12 +473,12 @@ function App() {
             </div>
             <div className='flex flex-col place-self-start justify-start items-start'>
               <a className="hover:text-defyellow flex flex-row justify-between gap-3" target="_blank" href='https://github.com/andreimattos06/LF-Receitas'>
-                <span className='xl:text-lg lg:text-sm font-medium'>Git - Frontend: </span>
-                <GithubLogo size={23} />
+                <span className='xl:text-lg text-sm font-medium'>Git - Frontend: </span>
+                <GithubLogo className='text-lg lg:text-2xl'/>
               </a>
               <a className="hover:text-defyellow flex flex-row justify-between shrink-0 w-full" target="_blank" href='https://github.com/andreimattos06/lfreceitasback'>
-                <span className='xl:text-lg lg:text-sm font-medium'>Git - Backend: </span>
-                <GithubLogo size={23} />
+                <span className='xl:text-lg text-sm font-medium'>Git - Backend: </span>
+                <GithubLogo className='text-lg lg:text-2xl' />
               </a>
             </div>
 
@@ -508,43 +508,36 @@ function App() {
 
           </div>
 
-          <div className='border-r-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center w-2/6 h-full gap-7'>
-
-            <span className='xl:text-3xl lg:text-xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_shopguns"]}</span>
-
-            <span className='xl:text-xl lg:text-base font-medium text-justify row-span-5'>{array_textos["texto_shopguns"]}</span>
-
+          <div className='bg-black rounded-xl border-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center h-auto gap-7 basis-full md:basis-2/4 lg:basis-1/3'>
+            <span className='text-base xl:text-3xl lg:text-xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_shopguns"]}</span>
+            <span className='text-sm xl:text-xl lg:text-base font-medium text-justify row-span-5'>{array_textos["texto_shopguns"]}</span>
             <div className='place-self-start flex flex-row justify-center'>
-              <span className='xl:text-xl lg:text-base font-semibold text-defyellow'>Front End: </span>
-              <Atom size={24} className='text-blue-400' />
-              <span className='xl:text-xl lg:text-base font-medium'> React</span>
+              <span className='text-sm xl:text-xl lg:text-base font-semibold text-defyellow'>Front End: </span>
+              <Atom className='text-lg lg:text-2xl text-blue-400' />
+              <span className='text-sm xl:text-xl lg:text-base font-medium'> React</span>
             </div>
-
             <div className='place-self-start flex flex-row justify-center'>
-              <span className='xl:text-xl lg:text-base font-semibold text-defyellow'>Back End: </span>
-              <Hexagon size={24} className='text-green-600' />
-              <span className='xl:text-xl lg:text-base font-medium'> Node</span>
+              <span className='text-sm xl:text-xl lg:text-base font-semibold text-defyellow'>Back End: </span>
+              <Hexagon className='text-lg lg:text-2xl text-green-600' />
+              <span className='text-sm xl:text-xl lg:text-base font-medium'> Node</span>
             </div>
-
-            <div className='place-self-start flex flex-row justify-center xl:text-lg lg:text-sm font-medium row-span-2'>
+            <div className='place-self-start flex flex-row justify-center xl:text-lg text-sm font-medium row-span-2'>
               <ul className='list-disc list-inside'>
                 <li>Tailwind</li>
                 <li>Typescript</li>
                 <li>Prisma</li>
               </ul>
             </div>
-
             <div className='flex justify-self-start justify-center hover:text-defyellow'>
               <a className="hover:text-defyellow flex flex-row justify-between gap-3" target="_blank" href='https://github.com/andreimattos06/ShopGuns'>
-                <span className='xl:text-lg lg:text-sm font-medium'>Git - Frontend/Backend: </span>
-                <GithubLogo size={23} />
+                <span className='xl:text-lg text-sm font-medium'>Git: </span>
+                <GithubLogo className='text-lg lg:text-2xl' />
               </a>
-
             </div>
 
 
             {/*
-            <div className='h-full flex justify-center items-end row-span-3'>
+            <div className='h-auto flex justify-center items-end row-span-3'>
               <button className='hover:bg-white rounded-2xl p-4 text-black bg-defyellow hover:text-defyellow transition-all duration-700'>
                 <MagnifyingGlassPlus size={40} className='' />
               </button>
@@ -553,25 +546,19 @@ function App() {
 
           </div>
 
-          <div className='px-20 py-14 grid grid-rows-{15} place-items-center w-2/6 h-full gap-7'>
-
-            <span className='xl:text-3xl lg:text-xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_kfbeauty"]}</span>
-
-            <span className='xl:text-xl lg:text-base font-medium text-justify row-span-5'>{array_textos["texto_kfbeauty"]}</span>
-
+          <div className='bg-black rounded-xl border-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center h-auto gap-7 basis-full md:basis-2/4 lg:basis-1/3'>
+            <span className='text-base xl:text-3xl lg:text-xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_kfbeauty"]}</span>
+            <span className='text-sm xl:text-xl lg:text-base font-medium text-justify row-span-5'>{array_textos["texto_kfbeauty"]}</span>
             <div className='place-self-start flex flex-row justify-center'>
-              <span className='xl:text-xl lg:text-base font-semibold text-defyellow'>Front End: </span>
-              <TagSimple size={24} className='text-blue-400 rotate-90' />
-              <span className='xl:text-xl lg:text-base font-medium'>HTML e CSS</span>
+              <span className='text-sm xl:text-xl lg:text-base font-semibold text-defyellow'>Front End: </span>
+              <TagSimple className='text-lg lg:text-2xl text-blue-400 rotate-90' />
+              <span className='text-sm xl:text-xl lg:text-base font-medium'>HTML e CSS</span>
             </div>
-
-
             <div className='flex justify-self-start justify-center hover:text-defyellow'>
               <a className="hover:text-defyellow flex flex-row justify-center gap-3" target="_blank" href='https://github.com/andreimattos06/KFBeauty'>
-                <span className='xl:text-lg lg:text-sm font-medium'>Git: </span>
-                <GithubLogo size={23} />
+                <span className='xl:text-lg text-sm font-medium'>Git: </span>
+                <GithubLogo className='text-lg lg:text-2xl' />
               </a>
-
             </div>
 
             {/* 
@@ -583,65 +570,54 @@ function App() {
             */}
 
           </div>
-        </div>
-      </div>
 
-      <div className='w-full flex px-16 mb-96 mt-10 justify-center'>
-        <div className='border-[1px] rounded-lg border-gray-700 px-20 grid grid-rows-{15} place-items-center w-2/6 h-full gap-7 py-14'>
+          <div className='bg-black rounded-xl border-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center h-auto gap-7 basis-full md:basis-2/4 lg:basis-1/3'>
+            <span className='text-base xl:text-3xl lg:text-xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_reservaveiculo"]}</span>
+            <span className='text-sm xl:text-xl lg:text-base font-medium text-justify row-span-5'>{array_textos["texto_reservaveiculo"]}</span>
+            <div className='place-self-start flex flex-row justify-center'>
+              <span className='text-sm xl:text-xl lg:text-base font-semibold text-defyellow'>Front End: </span>
+              <Triangle className='text-lg lg:text-2xl text-white' />
+              <span className='text-sm xl:text-xl lg:text-base font-medium'> Next.js</span>
+            </div>
+            <div className='place-self-start flex flex-row justify-center'>
+              <span className='text-sm xl:text-xl lg:text-base font-semibold text-defyellow'>Back End: </span>
+              <Hexagon className='text-lg lg:text-2xl text-green-600' />
+              <span className='text-sm xl:text-xl lg:text-base font-medium'> Node</span>
+            </div>
+            <div className='place-self-start flex flex-row justify-center xl:text-lg text-sm font-medium row-span-2'>
+              <ul className='list-disc list-inside'>
+                <li>Tailwind</li>
+                <li>Prisma</li>
+                <li>Next Auth</li>
+                <li>JWT Token and Refresh Token</li>
+              </ul>
+            </div>
+            <div className='flex flex-col place-self-start justify-start items-start'>
+              <a className="hover:text-defyellow flex flex-row justify-between gap-3" target="_blank" href='https://github.com/andreimattos06/Reserva_de_Veiculo'>
+                <span className='xl:text-lg text-sm font-medium'>Git - Frontend: </span>
+                <GithubLogo className='text-lg lg:text-2xl' />
+              </a>
+              <a className="hover:text-defyellow flex flex-row justify-between shrink-0 w-full" target="_blank" href='https://github.com/andreimattos06/Reserva_veiculo_server'>
+                <span className='xl:text-lg text-sm font-medium'>Git - Backend: </span>
+                <GithubLogo className='text-lg lg:text-2xl' />
+              </a>
+            </div>
+            <div className='flex justify-center items-end row-span-3'>
+              <a className='hover:bg-white rounded-2xl p-4 text-black bg-defyellow hover:text-defyellow transition-all duration-700' target='_blank' href='https://reserva-de-veiculo.vercel.app/'>
+                <MagnifyingGlassPlus className='text-lg xl:text-4xl lg:text-2xl' />
+              </a>
+            </div>
 
-          <span className='xl:text-3xl lg:text-xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_reservaveiculo"]}</span>
 
-          <span className='xl:text-xl lg:text-base font-medium text-justify row-span-5'>{array_textos["texto_reservaveiculo"]}</span>
-
-          <div className='place-self-start flex flex-row justify-center'>
-            <span className='xl:text-xl lg:text-base font-semibold text-defyellow'>Front End: </span>
-            <Triangle size={24} className='text-white' />
-            <span className='xl:text-xl lg:text-base font-medium'> Next.js</span>
           </div>
-
-          <div className='place-self-start flex flex-row justify-center'>
-            <span className='xl:text-xl lg:text-base font-semibold text-defyellow'>Back End: </span>
-            <Hexagon size={24} className='text-green-600' />
-            <span className='xl:text-xl lg:text-base font-medium'> Node</span>
-          </div>
-
-          <div className='place-self-start flex flex-row justify-center xl:text-lg lg:text-sm font-medium row-span-2'>
-            <ul className='list-disc list-inside'>
-              <li>Tailwind</li>
-              <li>Prisma</li>
-              <li>Next Auth</li>
-              <li>JWT Token and Refresh Token</li>
-            </ul>
-          </div>
-
-          <div className='flex flex-col place-self-start justify-start items-start'>
-            <a className="hover:text-defyellow flex flex-row justify-between gap-3" target="_blank" href='https://github.com/andreimattos06/Reserva_de_Veiculo'>
-              <span className='xl:text-lg lg:text-sm font-medium'>Git - Frontend: </span>
-              <GithubLogo size={23} />
-            </a>
-            <a className="hover:text-defyellow flex flex-row justify-between shrink-0 w-full" target="_blank" href='https://github.com/andreimattos06/Reserva_veiculo_server'>
-              <span className='xl:text-lg lg:text-sm font-medium'>Git - Backend: </span>
-              <GithubLogo size={23} />
-            </a>
-          </div>
-
-
-
-          <div className='flex justify-center items-end row-span-3'>
-            <a className='hover:bg-white rounded-2xl p-4 text-black bg-defyellow hover:text-defyellow transition-all duration-700' target='_blank' href='https://reserva-de-veiculo.vercel.app/'>
-              <MagnifyingGlassPlus className='xl:text-4xl lg:text-2xl' />
-            </a>
-          </div>
-
-
         </div>
       </div>
       {/* Fim da Seção de Projetos*/}
 
 
-      {/* Inicio da Seção de Participações e Eventos*/}
-      <div>
-        <div className='w-full flex-row flex text-defyellow text-xl xl:text-5xl lg:text-3xl tracking-tighter font-bold justify-center items-center gap-5'>
+      {/* Inicio da Seção de Participações e Eventos -- Por limitações de tela, essa parte será visível apenas para dispositidos > MD*/}
+      <div className='hidden md:block overflow-hidden'>
+        <div className='w-full flex-row flex text-defyellow text-xl xl:text-5xl lg:text-3xl tracking-tighter font-bold justify-center items-center gap-5 mt-24 lg:mt-44'>
           <hr className='grow border-defyellow border-[1px] lg:border-2' />
           <div>
             {/* @ts-ignore */}
@@ -659,10 +635,8 @@ function App() {
           <hr className='grow border-defyellow border-[1px] lg:border-2' />
         </div>
 
-
-
-        <div className='grid grid-cols-9 justify-center place-items-center mt-48 gap-20 relative'>
-          <div className='col-span-4 bg-defyellow w-full rounded-r-md -left-96 relative' id="esquerda1">
+        <div className='grid grid-cols-9 justify-center place-items-center mt-24 lg:mt-48 gap-20 relative'>
+          <div className='col-span-4 bg-defyellow w-full rounded-r-md -left-full relative' id="esquerda1">
             <div className='flex items-center justify-start py-5 px-5 gap-5'>
               <GraduationCap className='text-2xl lg:text-7xl text-black' />
               <div className='flex flex-col justify-center items-center text-center text-xs xl:text-xl lg:text-base text-black font-semibold w-full'>
@@ -687,7 +661,7 @@ function App() {
           <div className='col-span-1 text-sm xl:text-4xl lg:text-2xl font-bold'>
             2022
           </div>
-          <div className='col-span-4 bg-defyellow w-full rounded-l-md relative -right-96' id="direita1">
+          <div className='col-span-4 bg-defyellow w-full rounded-l-md relative -right-full' id="direita1">
             <div className='flex items-center justify-start py-5 px-5 gap-5'>
 
               <div className='flex flex-col justify-center items-center text-center text-xs xl:text-xl lg:text-base text-black font-semibold w-full'>
@@ -701,7 +675,7 @@ function App() {
           {/* @ts-ignore */}
           <div className='col-span-9' onLoad={div_animadas_slide_right.push("direita1")} />
 
-          <div className='col-span-4 bg-defyellow w-full rounded-r-md relative -left-96' id="esquerda2">
+          <div className='col-span-4 bg-defyellow w-full rounded-r-md relative -left-full' id="esquerda2">
             <div className='flex items-center justify-start py-5 px-5 gap-5'>
               <Certificate className='text-2xl lg:text-7xl text-black' />
               <div className='flex flex-col justify-center items-center text-center text-xs xl:text-xl lg:text-base text-black font-semibold w-full'>
@@ -727,7 +701,7 @@ function App() {
           <div className='col-span-1 text-sm xl:text-4xl lg:text-2xl font-bold'>
             2023
           </div>
-          <div className='col-span-4 bg-defyellow w-full rounded-l-md -right-96 relative' id="direita2">
+          <div className='col-span-4 bg-defyellow w-full rounded-l-md -right-full relative' id="direita2">
             <div className='flex items-center justify-start py-5 px-5 gap-5'>
               <Wrench className='text-2xl lg:text-7xl text-black' />
               <div className='flex flex-col justify-center items-center text-center text-xs xl:text-xl lg:text-base text-black font-semibold w-full'>
@@ -740,7 +714,7 @@ function App() {
           {/* @ts-ignore */}
           <div className='col-span-9' onLoad={div_animadas_slide_right.push("direita2")} />
 
-          <div className='col-span-4 bg-defyellow w-full rounded-r-md relative -left-96' id="esquerda3">
+          <div className='col-span-4 bg-defyellow w-full rounded-r-md relative -left-full' id="esquerda3">
             <div className='flex items-center justify-start py-5 px-5 gap-5'>
               <div className='flex flex-col justify-center items-center text-center text-xs xl:text-xl lg:text-base text-black font-semibold w-full'>
                 <span>{array_textos["tipo_fpe5"]}</span>
