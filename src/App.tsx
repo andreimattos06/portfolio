@@ -412,7 +412,6 @@ function App() {
       {/* Fim da Seção Inicial com minhas Informações*/}
 
 
-
       {/* Inicio da Seção de Tecnologias Utilizadas*/}
       <div className='flex justify-center items-center mb-56'>
         <div className='flex flex-col justify-center items-start w-4/6'>
@@ -442,13 +441,12 @@ function App() {
       </div>
 
       <div className='bg-defyellow w-full flex justify-center'>
-        <div className='flex flex-col items-center justify-center text-black pt-12 pb-24 xl:py-64 lg:pb-48 lg:pt-24 w-6/12 gap-10 text-justify'>
+        <div className='flex flex-col items-center justify-center text-black pt-12 pb-24 lg:pb-56 lg:pt-28 w-6/12 gap-10 text-justify'>
           <span className='xl:text-5xl lg:text-3xl text-xl font-bold'>{array_textos["titulo_projetos"]}</span>
           <span className='xl:text-xl text-sm'>{array_textos["texto_projetos"]}</span>
         </div>
       </div>
 
-      {/*Inicio da Seção de Projetos*/}
       <div className='w-full flex px-16'>
         <div className='flex rounded-xl -mt-20 lg:-mt-40 drop-shadow-2xl flex-wrap justify-center gap-5'>
           <div className='bg-black rounded-xl border-r-[1px] border-l-[1px] border-b-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center h-auto gap-7 basis-full md:basis-2/4 lg:basis-1/3'>
@@ -474,7 +472,7 @@ function App() {
             <div className='flex flex-col place-self-start justify-start items-start'>
               <a className="hover:text-defyellow flex flex-row justify-between gap-3" target="_blank" href='https://github.com/andreimattos06/LF-Receitas'>
                 <span className='xl:text-lg text-sm font-medium'>Git - Frontend: </span>
-                <GithubLogo className='text-lg lg:text-2xl'/>
+                <GithubLogo className='text-lg lg:text-2xl' />
               </a>
               <a className="hover:text-defyellow flex flex-row justify-between shrink-0 w-full" target="_blank" href='https://github.com/andreimattos06/lfreceitasback'>
                 <span className='xl:text-lg text-sm font-medium'>Git - Backend: </span>
@@ -546,7 +544,7 @@ function App() {
 
           </div>
 
-          <div className='bg-black rounded-xl border-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center h-auto gap-7 basis-full md:basis-2/4 lg:basis-1/3'>
+          <div className='bg-black rounded-xl border-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center content-start h-auto gap-7 basis-full md:basis-2/4 lg:basis-1/3'>
             <span className='text-base xl:text-3xl lg:text-xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_kfbeauty"]}</span>
             <span className='text-sm xl:text-xl lg:text-base font-medium text-justify row-span-5'>{array_textos["texto_kfbeauty"]}</span>
             <div className='place-self-start flex flex-row justify-center'>
@@ -615,26 +613,29 @@ function App() {
       {/* Fim da Seção de Projetos*/}
 
 
+      {/* Cabecalho da Seção "Formações", esta parte do resto pois independente do tamanho da tela sempre irá aparecer */}
+      <div className='w-full flex-row flex text-defyellow text-xl xl:text-5xl lg:text-3xl tracking-tighter font-bold justify-center items-center gap-5 mt-24 lg:mt-44'>
+        <hr className='grow border-defyellow border-[1px] lg:border-2' />
+        <div>
+          {/* @ts-ignore */}
+          <span className='opacity-0' id="For" onLoad={texto_animado.push("For")}>{array_textos["titulo_fpe1"]}</span>
+          <span className=''>{array_textos["titulo_fpe2"]}</span>
+          {/* @ts-ignore */}
+          <span className='opacity-0' id="e" onLoad={texto_animado.push("e")}> {array_textos["titulo_fpe3"]} </span>
+          <span className=''>{array_textos["titulo_fpe4"]}</span>
+          {/* @ts-ignore */}
+          <span className='opacity-0' id="pacoesem" onLoad={texto_animado.push("pacoesem")}>{array_textos["titulo_fpe5"]}</span>
+          <span className='' >{array_textos["titulo_fpe6"]}</span>
+          {/* @ts-ignore */}
+          <span className='opacity-0' id="tos" onLoad={texto_animado.push("tos")}>{array_textos["titulo_fpe7"]}</span>
+        </div>
+        <hr className='grow border-defyellow border-[1px] lg:border-2' />
+      </div>
+      {/* Fim do cabeçalho de "Formações" */}
+
+
       {/* Inicio da Seção de Participações e Eventos -- Por limitações de tela, essa parte será visível apenas para dispositidos > MD*/}
       <div className='hidden md:block overflow-hidden'>
-        <div className='w-full flex-row flex text-defyellow text-xl xl:text-5xl lg:text-3xl tracking-tighter font-bold justify-center items-center gap-5 mt-24 lg:mt-44'>
-          <hr className='grow border-defyellow border-[1px] lg:border-2' />
-          <div>
-            {/* @ts-ignore */}
-            <span className='opacity-0' id="For" onLoad={texto_animado.push("For")}>{array_textos["titulo_fpe1"]}</span>
-            <span className=''>{array_textos["titulo_fpe2"]}</span>
-            {/* @ts-ignore */}
-            <span className='opacity-0' id="e" onLoad={texto_animado.push("e")}> {array_textos["titulo_fpe3"]} </span>
-            <span className=''>{array_textos["titulo_fpe4"]}</span>
-            {/* @ts-ignore */}
-            <span className='opacity-0' id="pacoesem" onLoad={texto_animado.push("pacoesem")}>{array_textos["titulo_fpe5"]}</span>
-            <span className='' >{array_textos["titulo_fpe6"]}</span>
-            {/* @ts-ignore */}
-            <span className='opacity-0' id="tos" onLoad={texto_animado.push("tos")}>{array_textos["titulo_fpe7"]}</span>
-          </div>
-          <hr className='grow border-defyellow border-[1px] lg:border-2' />
-        </div>
-
         <div className='grid grid-cols-9 justify-center place-items-center mt-24 lg:mt-48 gap-20 relative'>
           <div className='col-span-4 bg-defyellow w-full rounded-r-md -left-full relative' id="esquerda1">
             <div className='flex items-center justify-start py-5 px-5 gap-5'>
@@ -643,7 +644,6 @@ function App() {
                 <span>{array_textos["tipo_fpe1"]}</span>
                 <span>{array_textos["nome_fpe1"]}</span>
                 <span>{array_textos["lugar_fpe1"]}</span>
-
               </div>
             </div>
           </div>
@@ -654,8 +654,6 @@ function App() {
           </div>
           {/* @ts-ignore */}
           <div className='col-span-9' onLoad={div_animadas_slide_left.push("esquerda1")} />
-
-
           <div className='col-span-4'>
           </div>
           <div className='col-span-1 text-sm xl:text-4xl lg:text-2xl font-bold'>
@@ -663,7 +661,6 @@ function App() {
           </div>
           <div className='col-span-4 bg-defyellow w-full rounded-l-md relative -right-full' id="direita1">
             <div className='flex items-center justify-start py-5 px-5 gap-5'>
-
               <div className='flex flex-col justify-center items-center text-center text-xs xl:text-xl lg:text-base text-black font-semibold w-full'>
                 <span>{array_textos["tipo_fpe3"]}</span>
                 <span>{array_textos["nome_fpe3"]}</span>
@@ -674,7 +671,6 @@ function App() {
           </div>
           {/* @ts-ignore */}
           <div className='col-span-9' onLoad={div_animadas_slide_right.push("direita1")} />
-
           <div className='col-span-4 bg-defyellow w-full rounded-r-md relative -left-full' id="esquerda2">
             <div className='flex items-center justify-start py-5 px-5 gap-5'>
               <Certificate className='text-2xl lg:text-7xl text-black' />
@@ -683,7 +679,6 @@ function App() {
                 <span>{array_textos["nome_fpe2"]}</span>
                 <span>{array_textos["lugar_fpe2"]}</span>
               </div>
-
             </div>
           </div>
           <div className='col-span-1 text-sm xl:text-4xl lg:text-2xl font-bold'>
@@ -693,9 +688,6 @@ function App() {
           </div>
           {/* @ts-ignore */}
           <div className='col-span-9' onLoad={div_animadas_slide_left.push("esquerda2")} />
-
-
-
           <div className='col-span-4'>
           </div>
           <div className='col-span-1 text-sm xl:text-4xl lg:text-2xl font-bold'>
@@ -713,7 +705,6 @@ function App() {
           </div>
           {/* @ts-ignore */}
           <div className='col-span-9' onLoad={div_animadas_slide_right.push("direita2")} />
-
           <div className='col-span-4 bg-defyellow w-full rounded-r-md relative -left-full' id="esquerda3">
             <div className='flex items-center justify-start py-5 px-5 gap-5'>
               <div className='flex flex-col justify-center items-center text-center text-xs xl:text-xl lg:text-base text-black font-semibold w-full'>
@@ -731,14 +722,108 @@ function App() {
           </div>
           {/* @ts-ignore */}
           <div className='col-span-9' onLoad={div_animadas_slide_left.push("esquerda3")} />
+        </div>
+      </div>
+      {/* Fim da Seção de Participações e Eventos*/}
+
+      {/* Inicio da Seção de Participações e Eventos -- Apenas para dispositidos < MD*/}
+      <div className='md:hidden overflow-hidden'>
+        <div className='grid grid-cols-6 justify-center place-items-center mt-24 lg:mt-48 relative'>
+          <div className='col-span-4 bg-defyellow w-full rounded-r-md relative -left-full' id="small_esquerda1">
+            <div className='flex items-center justify-start py-5 px-5 gap-5'>
+              <GraduationCap className='text-2xl lg:text-7xl text-black' />
+              <div className='flex flex-col justify-center items-center text-center text-xs xl:text-xl lg:text-base text-black font-semibold w-full'>
+                <span>{array_textos["tipo_fpe1"]}</span>
+                <span>{array_textos["nome_fpe1"]}</span>
+                <span>{array_textos["lugar_fpe1"]}</span>
+
+              </div>
+            </div>
+          </div>
+          <div className='col-span-2 text-sm xl:text-4xl lg:text-2xl font-bold'>
+            2019
+          </div>
+          {/* @ts-ignore */}
+          <div className='col-span-8 pb-10' onLoad={div_animadas_slide_left.push("small_esquerda1")} />
+
+          <div className='col-span-4 bg-defyellow w-full rounded-r-md relative -left-full' id="small_esquerda2">
+            <div className='flex items-center justify-start py-5 px-5 gap-5'>
+              <RocketLaunch className='text-2xl lg:text-7xl text-black' />
+              <div className='flex flex-col justify-center items-center text-center text-xs xl:text-xl lg:text-base text-black font-semibold w-full'>
+                <span>{array_textos["tipo_fpe3"]}</span>
+                <span>{array_textos["nome_fpe3"]}</span>
+                <span>{array_textos["lugar_fpe3"]}</span>
+
+              </div>
+            </div>
+          </div>
+          <div className='col-span-2 text-sm xl:text-4xl lg:text-2xl font-bold'>
+            2022
+          </div>
+          {/* @ts-ignore */}
+          <div className='col-span-8 pb-10' onLoad={div_animadas_slide_left.push("small_esquerda2")} />
+
+          <div className='col-span-4 bg-defyellow w-full rounded-r-md relative -left-full' id="small_esquerda3">
+            <div className='flex items-center justify-start py-5 px-5 gap-5'>
+              <Certificate className='text-2xl lg:text-7xl text-black' />
+              <div className='flex flex-col justify-center items-center text-center text-xs xl:text-xl lg:text-base text-black font-semibold w-full'>
+                <span>{array_textos["tipo_fpe2"]}</span>
+                <span>{array_textos["nome_fpe2"]}</span>
+                <span>{array_textos["lugar_fpe2"]}</span>
+
+              </div>
+            </div>
+          </div>
+          <div className='col-span-2 text-sm xl:text-4xl lg:text-2xl font-bold'>
+            2022
+          </div>
+          {/* @ts-ignore */}
+          <div className='col-span-8 pb-10' onLoad={div_animadas_slide_left.push("small_esquerda3")} />
+
+          <div className='col-span-4 bg-defyellow w-full rounded-r-md relative -left-full' id="small_esquerda4">
+            <div className='flex items-center justify-start py-5 px-5 gap-5'>
+              <Wrench className='text-2xl lg:text-7xl text-black' />
+              <div className='flex flex-col justify-center items-center text-center text-xs xl:text-xl lg:text-base text-black font-semibold w-full'>
+                <span>{array_textos["tipo_fpe4"]}</span>
+                <span>{array_textos["nome_fpe4"]}</span>
+                <span>{array_textos["lugar_fpe4"]}</span>
+
+              </div>
+            </div>
+          </div>
+          <div className='col-span-2 text-sm xl:text-4xl lg:text-2xl font-bold'>
+            2023
+          </div>
+          {/* @ts-ignore */}
+          <div className='col-span-8 pb-10' onLoad={div_animadas_slide_left.push("small_esquerda4")} />
+
+          <div className='col-span-4 bg-defyellow w-full rounded-r-md relative -left-full' id="small_esquerda5">
+            <div className='flex items-center justify-start py-5 px-5 gap-5'>
+              <Coffee className='text-2xl lg:text-7xl text-black' />
+              <div className='flex flex-col justify-center items-center text-center text-xs xl:text-xl lg:text-base text-black font-semibold w-full'>
+                <span>{array_textos["tipo_fpe5"]}</span>
+                <span>{array_textos["nome_fpe5"]}</span>
+                <span>{array_textos["lugar_fpe5"]}</span>
+
+              </div>
+            </div>
+          </div>
+          <div className='col-span-2 text-sm xl:text-4xl lg:text-2xl font-bold'>
+            2024
+          </div>
+          {/* @ts-ignore */}
+          <div className='col-span-8 pb-10' onLoad={div_animadas_slide_left.push("small_esquerda5")} />
+
+
+
+
 
         </div>
       </div>
       {/* Fim da Seção de Participações e Eventos*/}
 
-
       {/* Inicio da Seção de Contato*/}
-      <div className='w-full flex-row flex text-defyellow tracking-tighter font-bold items-center gap-5 mt-48'>
+      <div className='w-full flex-row flex text-defyellow tracking-tighter font-bold items-center gap-5 mt-24 lg:mt-48'>
         <hr className='border-defyellow border-[1px] xl:border-2 w-1/12' />
         <span className='text-defyellow text-xl xl:text-5xl lg:text-3xl'>{array_textos["titulo_contato"]}</span>
         <hr className='grow border-defyellow border-[1px] xl:border-2' />
