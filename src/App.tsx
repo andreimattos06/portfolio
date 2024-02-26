@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import './App.css'
 import './components/Header'
 import { Header } from './components/Header'
-import { Atom, DotOutline, EnvelopeSimple, Fire, GithubLogo, InstagramLogo, LinkedinLogo, FileTs, Triangle, Hexagon, Equals, Seal, FileJs, MagnifyingGlassPlus, TagSimple, GraduationCap, RocketLaunch, Wrench, Certificate, User, TextAlignJustify, PaperPlaneTilt, Broom, Coffee } from '@phosphor-icons/react'
+import { Atom, DotOutline, EnvelopeSimple, Fire, GithubLogo, InstagramLogo, LinkedinLogo, FileTs, Triangle, Hexagon, Equals, Seal, FileJs, MagnifyingGlassPlus, TagSimple, GraduationCap, RocketLaunch, Wrench, Certificate, User, TextAlignJustify, PaperPlaneTilt, Broom, Coffee, Leaf } from '@phosphor-icons/react'
 import { Input } from './components/Input'
 import { deepCopy } from './utils/DeepCopy'
 //import * as Dialog from '@radix-ui/react-dialog'
@@ -99,6 +99,12 @@ function App() {
 
   texto_portugues["texto_reservaveiculo"] = "Sistema web desenvolvido para facilitar o processo de reserva de veículo em uma determinada empresa, um administrador deve cadastrar os veículos e os usuários e com isso o usuário poderia acessar o calendário escolher a data e hora de partida e retorno que o sistema mostraria apenas os veículos disponíveis. Logo ele poderia fazer a reserva e isso garantiria que nenhum outro usuário reservasse o mesmo veículo, causando algum conflito de agenda."
   texto_ingles["texto_reservaveiculo"] = "Web system developed to facilitate the vehicle reservation process in a given company, an administrator must register the vehicles and users and with this the user could access the calendar choose the date and time of departure and return, and the system would only show the vehicles available. So he could make the reservation and this would ensure that no other user reserved the same vehicle, causing some schedule conflict."
+
+  texto_portugues["titulo_hexatirador"] = "Hexatirador"
+  texto_ingles["titulo_hexatirador"] = "Hexatirador"
+
+  texto_portugues["texto_hexatirador"] = "Trata-se de uma API Restful feita com o Springboot a qual utiliza o MongoDB como persistência. Atualmente em desenvolvimento, porém já consta com alguma funcionalidades: criação, leitura, atualização e exclusão (CRUD) das informações no banco de dados e sistema de JWT Token para validação de login e acesso a rotas. No momento está em fase de implementação o Refresh Token. Essa API servirá futuramente como backend para uma aplicação mobile."
+  texto_ingles["texto_hexatirador"] = "This is a Restful API built with Springboot that uses MongoDB for persistence. Currently under development, but already includes some functionalities: creation, reading, updating, and deleting (CRUD) information in the database, and a JWT Token system for login validation and access to routes. The implementation of the Refresh Token feature is currently underway. This API will serve as the backend for a mobile application in the future."
 
   texto_portugues["titulo_fpe1"] = "For"
   texto_ingles["titulo_fpe1"] = "Trai"
@@ -389,7 +395,7 @@ function App() {
       <Header lingua={linguagem} updateLinguagem={updateLinguagem} />
 
       {/* Inicio da Seção Inicial com minhas Informações*/}
-      <div className='bg-black mb-44 lg:mb-52 xl:mb-56'>
+      <div id="profile" className='bg-black mb-44 lg:mb-52 xl:mb-56'>
         <div className='flex flex-col items-center justify-center mt-20 gap-10'>
           <div className='text-defyellow font-bold text-3xl xl:text-7xl lg:text-5xl tracking-tighter'>
             <span>{array_textos!['titulo_inicial']}</span>
@@ -413,7 +419,7 @@ function App() {
 
 
       {/* Inicio da Seção de Tecnologias Utilizadas*/}
-      <div className='flex justify-center items-center mb-56'>
+      <div id="technologies" className='flex justify-center items-center mb-56'>
         <div className='flex flex-col justify-center items-start w-4/6'>
           <span className='text-defyellow text-xl xl:text-5xl lg:text-3xl font-bold tracking-tighter pb-12'>{array_textos!['titulo_tecnologia']}</span>
           <div className='border-l-[1px] border-defyellow pl-3' id="tecnologias">
@@ -436,7 +442,7 @@ function App() {
 
 
       {/* Inicio da Seção de Projetos*/}
-      <div className='flex justify-center items-center w-full'>
+      <div id="projects" className='flex justify-center items-center w-full'>
         <img className="w-5/12" src="desktop.svg" />
       </div>
 
@@ -449,127 +455,33 @@ function App() {
 
       <div className='w-full flex px-16'>
         <div className='flex rounded-xl -mt-20 lg:-mt-40 drop-shadow-2xl flex-wrap justify-center gap-5'>
-          <div className='bg-black rounded-xl border-r-[1px] border-l-[1px] border-b-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center h-auto gap-7 basis-full md:basis-2/4 lg:basis-1/3'>
-            <span className='text-base xl:text-3xl lg:text-xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_lfreceitas"]}</span>
-            <span className='text-sm xl:text-xl lg:text-base font-medium text-justify pt-5 row-span-5'>{array_textos["texto_lfreceitas"]}</span>
-            <div className='place-self-start flex flex-row justify-center'>
-              <span className='text-sm xl:text-xl lg:text-base font-semibold text-defyellow'>Front End: </span>
-              <Triangle className='text-white text-lg lg:text-2xl' />
-              <span className='text-sm xl:text-xl lg:text-base font-medium'> Next.js</span>
-            </div>
+
+          <div className='bg-black rounded-xl border-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center content-start h-auto gap-7 basis-full md:basis-2/4 lg:basis-1/3'>
+            <span className='text-base xl:text-3xl lg:text-xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_hexatirador"]}</span>
+            <span className='text-sm xl:text-xl lg:text-base font-medium text-justify row-span-5'>{array_textos["texto_hexatirador"]}</span>
             <div className='place-self-start flex flex-row justify-center'>
               <span className='text-sm xl:text-xl lg:text-base font-semibold text-defyellow'>Back End: </span>
-              <Hexagon className='text-lg lg:text-2xl text-green-600' />
-              <span className='text-sm xl:text-xl lg:text-base font-medium'> Node</span>
+              <Leaf className='text-lg lg:text-2xl text-green-600' />
+              <span className='text-sm xl:text-xl lg:text-base font-medium'>Springboot</span>
             </div>
             <div className='place-self-start flex flex-row justify-center xl:text-lg text-sm font-medium row-span-2'>
               <ul className='list-disc list-inside'>
-                <li>Tailwind</li>
-                <li>Typescript</li>
-                <li>Prisma</li>
+                <li>CRUD</li>
+                <li>Mongodb</li>
+                <li>Java</li>
+                <li>JWT Token</li>
+                <li className='opacity-30'>Refresh Token</li>
               </ul>
             </div>
             <div className='flex flex-col place-self-start justify-start items-start'>
-              <a className="hover:text-defyellow flex flex-row justify-between gap-3" target="_blank" href='https://github.com/andreimattos06/LF-Receitas'>
-                <span className='xl:text-lg text-sm font-medium'>Git - Frontend: </span>
-                <GithubLogo className='text-lg lg:text-2xl' />
-              </a>
-              <a className="hover:text-defyellow flex flex-row justify-between shrink-0 w-full" target="_blank" href='https://github.com/andreimattos06/lfreceitasback'>
-                <span className='xl:text-lg text-sm font-medium'>Git - Backend: </span>
+              <a className="hover:text-defyellow flex flex-row justify-between shrink-0 w-full gap-3" target="_blank" href='https://github.com/andreimattos06/HexAtiradorSpring'>
+                <span className='xl:text-lg text-sm font-medium'>Git:</span>
                 <GithubLogo className='text-lg lg:text-2xl' />
               </a>
             </div>
-
-            {/*
-            <Dialog.Root>
-              <div className='h-full flex justify-center items-end row-span-3'>
-                <Dialog.Trigger>
-                  <button className='hover:bg-white rounded-2xl p-4 text-black bg-defyellow hover:text-defyellow transition-all duration-700 mt-5'>
-                    <MagnifyingGlassPlus size={40} className='' />
-                  </button>
-                </Dialog.Trigger>
-              </div>
-              <Dialog.Portal>
-                <Dialog.Overlay className='bg-black fixed inset-0 opacity-40' />
-                <Dialog.Content className='fixed w-8/12 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center'>
-                  <div className='bg-black w-full flex border-2 border-defyellow rounded-md justify-center items-center'>
-                    {//<img src="teste.gif" className='w-full'/> }
-                    <iframe src="https://www.youtube.com/embed/aFpdO-0vrzs?autoplay=1&mute=1" width="1280" height="720" allow="autoplay">
-
-                    </iframe>
-                  </div>
-                </Dialog.Content>
-              </Dialog.Portal>
-            </Dialog.Root>
-            
-          */}
-
-          </div>
-
-          <div className='bg-black rounded-xl border-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center h-auto gap-7 basis-full md:basis-2/4 lg:basis-1/3'>
-            <span className='text-base xl:text-3xl lg:text-xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_shopguns"]}</span>
-            <span className='text-sm xl:text-xl lg:text-base font-medium text-justify row-span-5'>{array_textos["texto_shopguns"]}</span>
-            <div className='place-self-start flex flex-row justify-center'>
-              <span className='text-sm xl:text-xl lg:text-base font-semibold text-defyellow'>Front End: </span>
-              <Atom className='text-lg lg:text-2xl text-blue-400' />
-              <span className='text-sm xl:text-xl lg:text-base font-medium'> React</span>
-            </div>
-            <div className='place-self-start flex flex-row justify-center'>
-              <span className='text-sm xl:text-xl lg:text-base font-semibold text-defyellow'>Back End: </span>
-              <Hexagon className='text-lg lg:text-2xl text-green-600' />
-              <span className='text-sm xl:text-xl lg:text-base font-medium'> Node</span>
-            </div>
-            <div className='place-self-start flex flex-row justify-center xl:text-lg text-sm font-medium row-span-2'>
-              <ul className='list-disc list-inside'>
-                <li>Tailwind</li>
-                <li>Typescript</li>
-                <li>Prisma</li>
-              </ul>
-            </div>
-            <div className='flex justify-self-start justify-center hover:text-defyellow'>
-              <a className="hover:text-defyellow flex flex-row justify-between gap-3" target="_blank" href='https://github.com/andreimattos06/ShopGuns'>
-                <span className='xl:text-lg text-sm font-medium'>Git: </span>
-                <GithubLogo className='text-lg lg:text-2xl' />
-              </a>
-            </div>
-
-
-            {/*
-            <div className='h-auto flex justify-center items-end row-span-3'>
-              <button className='hover:bg-white rounded-2xl p-4 text-black bg-defyellow hover:text-defyellow transition-all duration-700'>
-                <MagnifyingGlassPlus size={40} className='' />
-              </button>
-            </div>
-            */}
-
           </div>
 
           <div className='bg-black rounded-xl border-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center content-start h-auto gap-7 basis-full md:basis-2/4 lg:basis-1/3'>
-            <span className='text-base xl:text-3xl lg:text-xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_kfbeauty"]}</span>
-            <span className='text-sm xl:text-xl lg:text-base font-medium text-justify row-span-5'>{array_textos["texto_kfbeauty"]}</span>
-            <div className='place-self-start flex flex-row justify-center'>
-              <span className='text-sm xl:text-xl lg:text-base font-semibold text-defyellow'>Front End: </span>
-              <TagSimple className='text-lg lg:text-2xl text-blue-400 rotate-90' />
-              <span className='text-sm xl:text-xl lg:text-base font-medium'>HTML e CSS</span>
-            </div>
-            <div className='flex justify-self-start justify-center hover:text-defyellow'>
-              <a className="hover:text-defyellow flex flex-row justify-center gap-3" target="_blank" href='https://github.com/andreimattos06/KFBeauty'>
-                <span className='xl:text-lg text-sm font-medium'>Git: </span>
-                <GithubLogo className='text-lg lg:text-2xl' />
-              </a>
-            </div>
-
-            {/* 
-            <div className='h-full flex justify-center items-end row-span-6'>
-              <button className='hover:bg-white rounded-2xl p-4 text-black bg-defyellow hover:text-defyellow transition-all duration-700'>
-                <MagnifyingGlassPlus size={40} className='' />
-              </button>
-            </div>
-            */}
-
-          </div>
-
-          <div className='bg-black rounded-xl border-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center h-auto gap-7 basis-full md:basis-2/4 lg:basis-1/3'>
             <span className='text-base xl:text-3xl lg:text-xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_reservaveiculo"]}</span>
             <span className='text-sm xl:text-xl lg:text-base font-medium text-justify row-span-5'>{array_textos["texto_reservaveiculo"]}</span>
             <div className='place-self-start flex flex-row justify-center'>
@@ -608,13 +520,129 @@ function App() {
 
 
           </div>
+
+          <div className='bg-black rounded-xl border-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center content-start h-auto gap-7 basis-full md:basis-2/4 lg:basis-1/3'>
+            <span className='text-base xl:text-3xl lg:text-xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_lfreceitas"]}</span>
+            <span className='text-sm xl:text-xl lg:text-base font-medium text-justify pt-5 row-span-5'>{array_textos["texto_lfreceitas"]}</span>
+            <div className='place-self-start flex flex-row justify-center'>
+              <span className='text-sm xl:text-xl lg:text-base font-semibold text-defyellow'>Front End: </span>
+              <Triangle className='text-white text-lg lg:text-2xl' />
+              <span className='text-sm xl:text-xl lg:text-base font-medium'> Next.js</span>
+            </div>
+            <div className='place-self-start flex flex-row justify-center'>
+              <span className='text-sm xl:text-xl lg:text-base font-semibold text-defyellow'>Back End: </span>
+              <Hexagon className='text-lg lg:text-2xl text-green-600' />
+              <span className='text-sm xl:text-xl lg:text-base font-medium'> Node</span>
+            </div>
+            <div className='place-self-start flex flex-row justify-center xl:text-lg text-sm font-medium row-span-2'>
+              <ul className='list-disc list-inside'>
+                <li>Tailwind</li>
+                <li>Typescript</li>
+                <li>Prisma</li>
+              </ul>
+            </div>
+            <div className='flex flex-col place-self-start justify-start items-start'>
+              <a className="hover:text-defyellow flex flex-row justify-between gap-3" target="_blank" href='https://github.com/andreimattos06/LF-Receitas'>
+                <span className='xl:text-lg text-sm font-medium'>Git - Frontend: </span>
+                <GithubLogo className='text-lg lg:text-2xl' />
+              </a>
+              <a className="hover:text-defyellow flex flex-row justify-between shrink-0 w-full" target="_blank" href='https://github.com/andreimattos06/lfreceitasback'>
+                <span className='xl:text-lg text-sm font-medium'>Git - Backend: </span>
+                <GithubLogo className='text-lg lg:text-2xl' />
+              </a>
+            </div>
+            {/*
+            <Dialog.Root>
+              <div className='h-full flex justify-center items-end row-span-3'>
+                <Dialog.Trigger>
+                  <button className='hover:bg-white rounded-2xl p-4 text-black bg-defyellow hover:text-defyellow transition-all duration-700 mt-5'>
+                    <MagnifyingGlassPlus size={40} className='' />
+                  </button>
+                </Dialog.Trigger>
+              </div>
+              <Dialog.Portal>
+                <Dialog.Overlay className='bg-black fixed inset-0 opacity-40' />
+                <Dialog.Content className='fixed w-8/12 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center'>
+                  <div className='bg-black w-full flex border-2 border-defyellow rounded-md justify-center items-center'>
+                    {//<img src="teste.gif" className='w-full'/> }
+                    <iframe src="https://www.youtube.com/embed/aFpdO-0vrzs?autoplay=1&mute=1" width="1280" height="720" allow="autoplay">
+
+                    </iframe>
+                  </div>
+                </Dialog.Content>
+              </Dialog.Portal>
+            </Dialog.Root>
+            
+          */}
+          </div>
+
+          <div className='bg-black rounded-xl border-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center content-start h-auto gap-7 basis-full md:basis-2/4 lg:basis-1/3'>
+            <span className='text-base xl:text-3xl lg:text-xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_shopguns"]}</span>
+            <span className='text-sm xl:text-xl lg:text-base font-medium text-justify row-span-5'>{array_textos["texto_shopguns"]}</span>
+            <div className='place-self-start flex flex-row justify-center'>
+              <span className='text-sm xl:text-xl lg:text-base font-semibold text-defyellow'>Front End: </span>
+              <Atom className='text-lg lg:text-2xl text-blue-400' />
+              <span className='text-sm xl:text-xl lg:text-base font-medium'> React</span>
+            </div>
+            <div className='place-self-start flex flex-row justify-center'>
+              <span className='text-sm xl:text-xl lg:text-base font-semibold text-defyellow'>Back End: </span>
+              <Hexagon className='text-lg lg:text-2xl text-green-600' />
+              <span className='text-sm xl:text-xl lg:text-base font-medium'> Node</span>
+            </div>
+            <div className='place-self-start flex flex-row justify-center xl:text-lg text-sm font-medium row-span-2'>
+              <ul className='list-disc list-inside'>
+                <li>Tailwind</li>
+                <li>Typescript</li>
+                <li>Prisma</li>
+              </ul>
+            </div>
+            <div className='flex justify-self-start justify-center hover:text-defyellow'>
+              <a className="hover:text-defyellow flex flex-row justify-between gap-3" target="_blank" href='https://github.com/andreimattos06/ShopGuns'>
+                <span className='xl:text-lg text-sm font-medium'>Git: </span>
+                <GithubLogo className='text-lg lg:text-2xl' />
+              </a>
+            </div>
+            {/*
+            <div className='h-auto flex justify-center items-end row-span-3'>
+              <button className='hover:bg-white rounded-2xl p-4 text-black bg-defyellow hover:text-defyellow transition-all duration-700'>
+                <MagnifyingGlassPlus size={40} className='' />
+              </button>
+            </div>
+            */}
+
+          </div>
+
+          <div className='bg-black rounded-xl border-[1px] border-gray-700 px-20 py-14 grid grid-rows-{15} place-items-center content-start h-auto gap-7 basis-full md:basis-2/4 lg:basis-1/3'>
+            <span className='text-base xl:text-3xl lg:text-xl font-semibold text-defyellow row-span-2'>{array_textos["titulo_kfbeauty"]}</span>
+            <span className='text-sm xl:text-xl lg:text-base font-medium text-justify row-span-5'>{array_textos["texto_kfbeauty"]}</span>
+            <div className='place-self-start flex flex-row justify-center'>
+              <span className='text-sm xl:text-xl lg:text-base font-semibold text-defyellow'>Front End: </span>
+              <TagSimple className='text-lg lg:text-2xl text-blue-400 rotate-90' />
+              <span className='text-sm xl:text-xl lg:text-base font-medium'>HTML e CSS</span>
+            </div>
+            <div className='flex justify-self-start justify-center hover:text-defyellow'>
+              <a className="hover:text-defyellow flex flex-row justify-center gap-3" target="_blank" href='https://github.com/andreimattos06/KFBeauty'>
+                <span className='xl:text-lg text-sm font-medium'>Git: </span>
+                <GithubLogo className='text-lg lg:text-2xl' />
+              </a>
+            </div>
+            {/* 
+            <div className='h-full flex justify-center items-end row-span-6'>
+              <button className='hover:bg-white rounded-2xl p-4 text-black bg-defyellow hover:text-defyellow transition-all duration-700'>
+                <MagnifyingGlassPlus size={40} className='' />
+              </button>
+            </div>
+            */}
+          </div>
+
+
         </div>
       </div>
       {/* Fim da Seção de Projetos*/}
 
 
       {/* Cabecalho da Seção "Formações", esta parte do resto pois independente do tamanho da tela sempre irá aparecer */}
-      <div className='w-full flex-row flex text-defyellow text-xl xl:text-5xl lg:text-3xl tracking-tighter font-bold justify-center items-center gap-5 mt-24 lg:mt-44'>
+      <div id="formations" className='w-full flex-row flex text-defyellow text-xl xl:text-5xl lg:text-3xl tracking-tighter font-bold justify-center items-center gap-5 mt-24 lg:mt-44'>
         <hr className='grow border-defyellow border-[1px] lg:border-2' />
         <div>
           {/* @ts-ignore */}
@@ -823,7 +851,7 @@ function App() {
       {/* Fim da Seção de Participações e Eventos*/}
 
       {/* Inicio da Seção de Contato*/}
-      <div className='w-full flex-row flex text-defyellow tracking-tighter font-bold items-center gap-5 mt-24 lg:mt-48'>
+      <div id="contact" className='w-full flex-row flex text-defyellow tracking-tighter font-bold items-center gap-5 mt-24 lg:mt-48'>
         <hr className='border-defyellow border-[1px] xl:border-2 w-1/12' />
         <span className='text-defyellow text-xl xl:text-5xl lg:text-3xl'>{array_textos["titulo_contato"]}</span>
         <hr className='grow border-defyellow border-[1px] xl:border-2' />

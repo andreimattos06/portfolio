@@ -149,6 +149,11 @@ function clickMenu(){
 
 }
 
+function scrollToSectionAndCloseMenu(section: string){
+    clickMenu();
+    document.getElementById(section)!.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
 
     return(
         <>          
@@ -169,11 +174,11 @@ function clickMenu(){
                 <div id="opcoes_menu" className="opacity-0">
                     {opcoesMenu ? 
                         <div className="grid grid-cols-1 pt-8 lg:pt-32 text-base md:text-xl xl:text-4xl lg:text-2xl gap-10 font-semibold content-center place-items-center text-center" >
-                                <button className="hover:text-defyellow">{array_textos['primeiro']}</button>
-                                <button className="hover:text-defyellow">{array_textos['segundo']}</button>
-                                <button className="hover:text-defyellow">{array_textos['terceiro']}</button>
-                                <button className="hover:text-defyellow">{array_textos['quarto']}</button>
-                                <button className="hover:text-defyellow">{array_textos['quinto']}</button>                                
+                                <button className="hover:text-defyellow" onClick={() =>{scrollToSectionAndCloseMenu("profile")}}>{array_textos['primeiro']}</button>
+                                <button className="hover:text-defyellow" onClick={() =>{scrollToSectionAndCloseMenu("technologies")}}>{array_textos['segundo']}</button>
+                                <button className="hover:text-defyellow" onClick={() =>{scrollToSectionAndCloseMenu("projects")}}>{array_textos['terceiro']}</button>
+                                <button className="hover:text-defyellow" onClick={() =>{scrollToSectionAndCloseMenu("formations")}}>{array_textos['quarto']}</button>
+                                <button className="hover:text-defyellow" onClick={() =>{scrollToSectionAndCloseMenu("contact")}}>{array_textos['quinto']}</button>                                
                                 <div className="flex flex-row w-full gap-3 items-center justify-center">
                                     <button className={clsx('w-6 xl:w-[3.24rem] lg:w-[2.5rem] hover:opacity-100 duration-700', {'opacity-40' : !props.lingua})} onClick={() => props.updateLinguagem(true)}>
                                         <img src="brasil.svg" />
